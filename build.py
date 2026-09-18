@@ -24,6 +24,7 @@ UI = {
    open='Open', contact='Contact and formats', aiT='For AI tools and agents', aiB1='Same CV, machine-friendly:',
    aiB2='JSON Resume schema', aiB3='This page also carries schema.org <code>Person</code> data as JSON-LD.',
    updated='Updated', source='source', mdTitle='Plain Markdown version for AI tools',
+   navAria='Sections', themeToDark='Switch to dark theme', themeToLight='Switch to light theme', themeTitle='Toggle dark / light',
    types={}, modes={}, places={}, mon=None, monfull=None, other='PT', otherHref='pt/', otherLang='pt-BR', oglocale='en_US'),
  'pt': dict(html='pt-BR', country='Brasil', skip='Pular para o conteúdo', about='Sobre', now='Agora', loc='Localização',
    langs='Idiomas', exp='Experiência', expand='Expandir tudo', collapse='Recolher tudo', personal='Projetos pessoais',
@@ -31,6 +32,7 @@ UI = {
    open='Abrir', contact='Contato e formatos', aiT='Para ferramentas de IA e agentes', aiB1='O mesmo CV, legível por máquina:',
    aiB2='schema JSON Resume', aiB3='Esta página também carrega dados schema.org <code>Person</code> em JSON-LD.',
    updated='Atualizado em', source='código', mdTitle='Versão em Markdown para ferramentas de IA',
+   navAria='Seções', themeToDark='Mudar para o tema escuro', themeToLight='Mudar para o tema claro', themeTitle='Alternar claro / escuro',
    types={'Full-time': 'Tempo integral', 'Contract': 'Contrato'},
    modes={'Remote': 'Remoto', 'On-site': 'Presencial', 'Hybrid': 'Híbrido'},
    places={'Boulder, Colorado, US': 'Boulder, Colorado, EUA', 'New York City, US': 'Nova York, EUA'},
@@ -446,12 +448,12 @@ INDEX = f'''<!doctype html>
 <div class="bar">
   <div class="wrap">
     <a class="brand" href="#top">{e(B["name"])}</a>
-    <nav aria-label="Sections">
+    <nav aria-label="{L['navAria']}">
       <a href="#about">{L['about']}</a><a href="#experience">{L['exp']}</a><a href="#skills">{L['skills'].split(' ')[0] if LANG == 'pt' else L['skills']}</a>
     </nav>
     <div class="navr">
     <a class="langsw" href="{L['otherHref']}" hreflang="{L['otherLang']}" lang="{L['otherLang']}">{L['other']}</a>
-    <button id="theme" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Toggle dark / light">
+    <button id="theme" type="button" aria-label="{L['themeToDark']}" aria-pressed="false" title="{L['themeTitle']}">
       <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
     </button>
@@ -538,7 +540,7 @@ INDEX = f'''<!doctype html>
   const io = new IntersectionObserver(es => es.forEach(x => {{ if (x.isIntersecting) {{ x.target.classList.add('in'); io.unobserve(x.target); }} }}), {{rootMargin:'0px 0px -8% 0px'}});
   document.querySelectorAll('.rise').forEach((el, i) => {{ el.style.transitionDelay = (i % 4) * 60 + 'ms'; io.observe(el); }});
   const root = document.documentElement, btn = document.getElementById('theme'), meta = document.querySelector('meta[name=theme-color]');
-  const paint = () => {{ const d = root.dataset.theme === 'dark'; btn.setAttribute('aria-pressed', d); btn.setAttribute('aria-label', d ? 'Switch to light theme' : 'Switch to dark theme'); meta.content = d ? '#090D14' : '#F5F7FA'; }};
+  const paint = () => {{ const d = root.dataset.theme === 'dark'; btn.setAttribute('aria-pressed', d); btn.setAttribute('aria-label', d ? '{L['themeToLight']}' : '{L['themeToDark']}'); meta.content = d ? '#090D14' : '#F5F7FA'; }};
   btn.addEventListener('click', () => {{ const d = root.dataset.theme === 'dark'; if (d) delete root.dataset.theme; else root.dataset.theme = 'dark'; try {{ localStorage.setItem('theme', d ? 'light' : 'dark'); }} catch (e) {{}} paint(); }});
   paint();
   const roles = [...document.querySelectorAll('details.role')], xall = document.getElementById('xall');

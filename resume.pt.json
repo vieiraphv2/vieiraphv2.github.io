@@ -2,7 +2,7 @@
   "basics": {
     "label": "Engenheiro DevOps & Plataforma | Operações de TI",
     "tagline": "Paulo Vieira Silva é Engenheiro DevOps e de Plataforma, responsável pelo Google Cloud, pela plataforma de dados e pelos produtos internos da Smarter Sorting, e Consultor de TI na Pareto AI. Mais de $600 mil/ano em economias de nuvem entregues; 1,4 TB migrados sem downtime.",
-    "summary": "Engenheiro DevOps e de plataforma com mais de 10 anos em TI.\n\nMinha força é descobrir o que está realmente acontecendo e trabalhar na solução, independente de área, ferramenta, complexidade ou tamanho da tarefa.\n\nEssa amplitude vem de uma carreira que cobre toda a largura da operação de tecnologia, de NOC para mineração global e suporte a ERP até identidade, segurança, infraestrutura de nuvem, plataformas de dados e engenharia de produtos internos.\n\nOs últimos doze meses, em números:\n- Mais de $600 mil/ano em economias de nuvem identificadas e entregues, usando IA para construir ferramentas, sistemas e processos internos confiáveis.\n- Migração de Snowflake para BigQuery: 1,4 TB em 33 bancos de dados, sem interrupção de serviço e com custo de computação ~35% menor; 30+ relatórios Tableau com 4.000+ SQLs específicos de Snowflake migrados.\n- Salesforce Cases substituído por uma plataforma de suporte construída em 13 dias, hoje com 65.003 tickets migrados.\n- Conta do Kubernetes de produção cortada pela metade, com zero incidentes.\n\nO que os números não mostram: eu documento o que construo, ensino as ferramentas a quem precisar e deixo cada sistema mais fácil de operar do que encontrei. O crescimento do time ao meu redor faz parte da entrega.",
+    "summary": "Engenheiro DevOps e de plataforma com mais de 10 anos em TI.\n\nMinha força é descobrir o que está realmente acontecendo e resolver o problema, independentemente de área, ferramenta, complexidade ou tamanho da tarefa.\n\nEssa amplitude vem de uma carreira que cobre toda a extensão da operação de tecnologia, de NOC para mineração global e suporte a ERP até identidade, segurança, infraestrutura de nuvem, plataformas de dados e engenharia de produtos internos.\n\nOs últimos doze meses, em números:\n- Mais de $600 mil/ano em economias de nuvem identificadas e entregues, usando IA para construir ferramentas, sistemas e processos internos confiáveis.\n- Migração de Snowflake para BigQuery: 1,4 TB em 33 bancos de dados, sem interrupção de serviço e com custo de computação ~35% menor; 30+ relatórios Tableau com 4.000+ SQLs específicos de Snowflake migrados.\n- Salesforce Cases substituído por uma plataforma de suporte construída em 13 dias, hoje com 65.003 tickets migrados.\n- Conta do Kubernetes de produção cortada pela metade, com zero incidentes.\n\nO que os números não mostram: eu documento o que construo, ensino as ferramentas a quem precisar e deixo cada sistema mais fácil de operar do que encontrei. O crescimento do time ao meu redor faz parte da entrega.",
     "location": {
       "remote": "Remoto, horário dos EUA"
     }
@@ -18,8 +18,8 @@
         "Liderei o programa de custos do Google Cloud, identificando e entregando mais de $600 mil/ano em economias. Diagnostiquei uma má configuração de BigQuery custando ~$38.000/mês e validei a correção contra o billing export (redução de 98,4%).",
         "Cortei os dois clusters GKE de $19.574/mês: right-sizing de dezenas de serviços, 38 serviços mortos desligados com aval dos donos, 9 dos 18 nós de produção drenados um por vez, staging movido para Spot em AMD. Conta de produção pela metade ($9.483 para $4.745); ~$140 mil/ano economizados hoje, ~$160 mil quando o desconto de uso comprometido entrar. Zero downtime, zero incidentes.",
         "Substituí replicação de dados de terceiros por pipelines internos: um ETL em Python no Cloud Run sincronizando 196 objetos do Salesforce diariamente, ingestão da API do Stripe no BigQuery e change data capture com Datastream em quatro ambientes.",
-        "Entreguei um portal multi-tenant de arquivos com API REST pública (construído em dois dias depois que um varejista recusou SFTP, Dropbox e Drive) e um serviço de acesso somente leitura a bancos sem distribuir credenciais.",
-        "Rastreei meses de testes de restore falhando até 5,5 TB de WAL retidos por dois replication slots mortos, completei o primeiro restore bem-sucedido (407 GB) e lancei point-in-time recovery, testes de restore automatizados e alertas de WAL em toda instância de produção.",
+        "Entreguei um portal multi-tenant de arquivos com API REST pública (construído em dois dias depois que um varejista recusou SFTP, Dropbox e Drive) e um serviço de acesso somente leitura a bancos de dados sem distribuir credenciais.",
+        "Rastreei meses de falhas nos testes de restore até 5,5 TB de WAL retidos por dois replication slots mortos, completei o primeiro restore bem-sucedido (407 GB) e lancei point-in-time recovery, testes de restore automatizados e alertas de WAL em toda instância de produção.",
         "Substituí a revisão quinzenal manual de logs de segurança por um job no Cloud Run que analisa logs de Cloud Armor, firewall, bancos e Auth0 e abre os próprios tickets no Jira.",
         "Resolvi incidentes de dados em produção para varejistas enterprise: restaurei um dashboard crítico de negócio em 5 horas; corrigi dados de materiais perigosos que alimentavam a logística de um varejista nacional.",
         "Escrevi o padrão da empresa para acesso programático de IA, substituindo chaves de API estáticas por Workload Identity Federation. Adicionei revisão automática por IA de builds de CI que falham."
@@ -75,6 +75,11 @@
         "Gerenciei solicitações de usuários, inventário de ativos, onboarding/offboarding e melhorias nos processos internos de TI.",
         "Construí automações de TI que reduziram tempos de resposta.",
         "Liderei melhorias em controle de inventário, relação com fornecedores e implantação de políticas de segurança."
+      ],
+      "keywords": [
+        "Gestão de serviços de TI",
+        "Gestão de ativos",
+        "Automação"
       ]
     },
     {
@@ -111,18 +116,28 @@
       "highlights": [
         "Gestão de serviços e equipe, finanças e orçamento, estoque, relacionamento com clientes e TI.",
         "Eletrônica embarcada, injeção eletrônica e diagnóstico automotivo avançado."
+      ],
+      "keywords": [
+        "Operações",
+        "Gestão de equipe"
       ]
     },
     {
       "position": "Instrutor de Informática",
       "highlights": [
         "Lecionei fundamentos de informática, design gráfico, Photoshop, montagem e manutenção de computadores, inglês básico e administração básica."
+      ],
+      "keywords": [
+        "Ensino"
       ]
     },
     {
       "position": "Assistente Técnico",
       "highlights": [
         "Portões automáticos, impressoras de rede, manutenção de computadores, CFTV e atendimento ao cliente."
+      ],
+      "keywords": [
+        "Suporte de campo"
       ]
     }
   ],
@@ -156,14 +171,22 @@
       "description": "Migração do warehouse inteiro por um engenheiro, de julho de 2025 ao cutover de 1º de abril de 2026: 1,4 TB, 33 bancos, 451 workbooks inventariados, todos os relatórios Tableau de clientes. Sem interrupção de serviço, computação ~35% mais barata, e anos de dados silenciosamente errados rastreados ao pipeline legado e corrigidos (~2.000 registros fantasmas).",
       "highlights": [
         "Tableau Migration Center: navegador de schemas sobre 5.445 tabelas e 131 mil colunas, tradutor de SQL com 30+ conversões, conversor de workbooks em um clique (um dashboard executivo da Costco em ~15 minutos)",
-        "Procedure de exportação de banco inteiro que reduziu a migração a três cliques",
+        "Procedimento de exportação de banco de dados inteiro que reduziu a migração a três cliques",
         "Extensão de Chrome para os usuários resgatarem seus worksheets de SQL antes do desligamento",
         "Escolhido como showcase de IA no all-hands de fevereiro de 2026"
+      ],
+      "keywords": [
+        "BigQuery",
+        "Snowflake",
+        "Tableau",
+        "Tradução de SQL",
+        "Datastream",
+        "Cloud Run"
       ]
     },
     {
       "roles": [
-        "Design e desenvolvimento"
+        "Designer e desenvolvedor"
       ],
       "description": "Portal de arquivos multi-tenant construído em dois dias depois que um varejista nacional recusou custódia via SFTP, Dropbox e Drive. Serverless no Cloud Run com API REST pública: uploads de até 5 GB por arquivo e 10.000 arquivos por lote, tokens com hash, proteção contra SSRF, log de auditoria, URLs perenes e revogáveis sob o domínio da empresa.",
       "highlights": [
@@ -284,6 +307,7 @@
   ],
   "awards": [
     {
+      "title": "3º lugar, Google Cloud Data Analytics Mentor-Led Hackathon",
       "summary": "Equipe de duas pessoas; construímos um motor automatizado de alocação de custos de nuvem por cliente em um sprint de três semanas com mentores do Google."
     }
   ]
