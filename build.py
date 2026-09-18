@@ -134,6 +134,7 @@ def role(w, i):
     end = w.get("endDate")
     place, mode = workmode(w)
     place = L['places'].get(place, place)
+    if LANG == 'pt': place = place.replace('Brazil', 'Brasil').replace(' and ', ' e ')
     etype = L['types'].get(w['type'], w['type']) + (f" &middot; {e(L['modes'].get(mode, mode))}" if mode else '')
     lgo = (ROOT / w["logo"]).read_text() if w.get("logo") else f'<span class="mono">{e(w["name"][0])}</span>'
     projs = [p for p in P if p.get("employer") == w["name"]] if i == next(k for k, x in enumerate(W) if x["name"] == w["name"]) else []
