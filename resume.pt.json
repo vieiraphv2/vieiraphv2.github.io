@@ -16,7 +16,7 @@
         "Construí o ferramental que tornou a migração possível: um tradutor de SQL Snowflake para BigQuery ciente de schema, um conversor de workbooks Tableau em um clique e um navegador de schemas cobrindo 5.400+ tabelas.",
         "Construí a plataforma de suporte que substituiu o Salesforce Cases em 13 dias: e-mail virando ticket, central de ajuda pública, base de conhecimento, RBAC e anexos. 65.003 tickets e 145.464 mensagens migrados, no ar antes do desligamento do Salesforce.",
         "Liderei o programa de custos do Google Cloud, identificando e entregando mais de $600 mil/ano em economias. Diagnostiquei uma má configuração de BigQuery custando ~$38.000/mês e validei a correção contra o billing export (redução de 98,4%).",
-        "Cortei os dois clusters GKE de $19.574/mês: right-sizing de dezenas de serviços, 38 serviços mortos desligados com aval dos donos, 9 dos 18 nós de produção drenados um por vez, staging movido para Spot em AMD e fechamento com contrato de uso comprometido de um ano. Conta de produção reduzida em dois terços; ~$160 mil/ano economizados. Zero downtime, zero incidentes.",
+        "Cortei os dois clusters GKE de $19.574/mês: right-sizing de dezenas de serviços, 38 serviços mortos desligados com aval dos donos, 9 dos 18 nós de produção drenados um por vez, staging movido para Spot em AMD e fechamento com contrato de uso comprometido de um ano, tudo sem downtime nem incidentes. Conta de produção reduzida em dois terços; ~$160 mil/ano economizados.",
         "Substituí replicação de dados de terceiros por pipelines internos: um ETL em Python no Cloud Run sincronizando 196 objetos do Salesforce diariamente, ingestão da API do Stripe no BigQuery e change data capture com Datastream em quatro ambientes.",
         "Entreguei um portal multi-tenant de arquivos com API REST pública (construído em dois dias depois que um varejista recusou SFTP, Dropbox e Drive) e um serviço de acesso somente leitura a bancos de dados sem distribuir credenciais.",
         "Rastreei meses de falhas nos testes de restore até 5,5 TB de WAL retidos por dois replication slots mortos, completei o primeiro restore bem-sucedido (407 GB) e lancei point-in-time recovery, testes de restore automatizados e alertas de WAL em toda instância de produção.",
@@ -144,7 +144,7 @@
       "roles": [
         "Engenheiro líder"
       ],
-      "description": "Os dois clusters Kubernetes da Smarter Sorting, de julho a outubro de 2026. Medir primeiro, right-sizing das reservas, desligar o que ninguém chama, drenar nós um por vez, e um contrato de uso comprometido de um ano para fechar. Ponto de partida de $19.574/mês; ~$160 mil/ano economizados. Zero downtime.",
+      "description": "Os dois clusters Kubernetes da Smarter Sorting, de julho a outubro de 2026. Medir primeiro, right-sizing das reservas, desligar o que ninguém chama, drenar nós um por vez, e um contrato de uso comprometido de um ano para fechar. Ponto de partida de $19.574/mês; ~$160 mil/ano economizados sem um minuto de downtime.",
       "highlights": [
         "38 serviços mortos desligados, cada um com aval do dono e caminho de volta documentado",
         "18 máquinas de produção reduzidas a 9, drenadas uma por vez",

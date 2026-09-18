@@ -32,7 +32,7 @@ What the numbers do not show: I document what I build, teach the tools to whoeve
 ## Selected work
 
 ### GKE Cost Reduction — https://vieiraphv2.github.io/gke-cost-reduction/
-Both Kubernetes clusters at Smarter Sorting, July to October 2026. Measure first, right-size reservations, retire what nothing calls, drain nodes one at a time, then a one-year committed-use agreement to close. $19,574/month starting point; ~$160k/year saved. Zero downtime.
+Both Kubernetes clusters at Smarter Sorting, July to October 2026. Measure first, right-size reservations, retire what nothing calls, drain nodes one at a time, then a one-year committed-use agreement to close. $19,574/month starting point; ~$160k/year saved without a minute of downtime.
 - 38 dead services shut down, each with the owner's sign-off and a documented way back
 - 18 production machines down to 9, drained one at a time
 - Staging on preemptible Spot capacity plus AMD: ~$83k/year
@@ -70,7 +70,7 @@ Own cloud infrastructure, the data platform and internal products at a complianc
 - Built the tooling that made the migration possible: a schema-aware Snowflake-to-BigQuery SQL translator, a one-click Tableau workbook converter and a schema browser covering 5,400+ tables.
 - Built the in-house support platform that replaced Salesforce Cases in 13 days: email-to-ticket intake, public help center, knowledge base, RBAC and attachments. 65,003 tickets and 145,464 messages migrated, live before the Salesforce sunset.
 - Led the Google Cloud cost program, identifying and delivering over $600k/year in savings. Diagnosed a BigQuery misconfiguration costing ~$38,000/month and validated the fix against the billing export (98.4% reduction).
-- Cut both GKE clusters from $19,574/month: right-sized dozens of services, retired 38 dead services with owner sign-off, drained 9 of 18 production nodes one at a time, moved staging to Spot capacity on AMD and closed with a one-year committed-use agreement. Production bill down two-thirds; ~$160k/year saved. Zero downtime, zero incidents.
+- Cut both GKE clusters from $19,574/month: right-sized dozens of services, retired 38 dead services with owner sign-off, drained 9 of 18 production nodes one at a time, moved staging to Spot capacity on AMD and closed with a one-year committed-use agreement, all without downtime or incidents. Production bill down two-thirds; ~$160k/year saved.
 - Replaced third-party data replication with in-house pipelines: a Python ETL on Cloud Run syncing 196 Salesforce objects daily, Stripe API ingestion into BigQuery, and Datastream change data capture across four environments.
 - Shipped a multi-tenant file-sharing portal with a public REST API (built in two days after a retailer refused SFTP, Dropbox and Drive) and a service granting read-only database access without distributing credentials.
 - Root-caused months of failed production restore tests to 5.5 TB of WAL held by two dead replication slots, completed the first successful restore (407 GB) and launched point-in-time recovery, automated restore tests and WAL alerts on every production instance.
