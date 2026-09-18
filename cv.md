@@ -52,7 +52,7 @@ Company-wide warehouse move by one engineer, July 2025 to the April 1, 2026 cuto
 
 ### FileShare
 Multi-tenant file portal built in two days after a national retailer refused SFTP, Dropbox and Drive custody. Serverless on Cloud Run with a public REST API: uploads up to 5 GB per file and 10,000 files per batch, hashed bearer tokens, SSRF protection, audit log, evergreen revocable URLs under the company domain.
-- 59,717 files and 2.4 GB in a single test upload
+- Adopted in production the week it shipped: 10,000 API calls in a single client run, and ~150 customer shipping documents hosted for a Costco deliverable
 - 800+ documents served to a retailer under stable URLs; a bridge mode re-hosts third-party safety data sheets
 
 ### Tibbis — https://tibbis.com.br

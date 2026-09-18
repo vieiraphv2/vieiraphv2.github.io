@@ -428,7 +428,7 @@
         "GCS"
       ],
       "highlights": [
-        "59,717 files and 2.4 GB in a single test upload",
+        "Adopted in production the week it shipped: 10,000 API calls in a single client run, and ~150 customer shipping documents hosted for a Costco deliverable",
         "800+ documents served to a retailer under stable URLs; a bridge mode re-hosts third-party safety data sheets"
       ],
       "employer": "Smarter Sorting"
