@@ -27,32 +27,6 @@
     ],
     "email": "paulo_sng@hotmail.com"
   },
-  "highlights": [
-    {
-      "value": "$600k",
-      "unit": "/year",
-      "tag": "Google Cloud savings",
-      "label": "Google Cloud savings identified and delivered across BigQuery, GKE, Cloud SQL and vendor contracts."
-    },
-    {
-      "value": "1.4 TB",
-      "unit": "",
-      "tag": "Snowflake → BigQuery",
-      "label": "Company-wide warehouse migration: 33 databases and every customer-facing Tableau report, zero downtime, sole engineer."
-    },
-    {
-      "value": "65k",
-      "unit": "tickets",
-      "tag": "Salesforce Cases replaced",
-      "label": "In-house support platform built and live in 13 days; 65,003 tickets and 145,464 messages migrated before the Salesforce sunset."
-    },
-    {
-      "value": "50%",
-      "unit": "",
-      "tag": "GKE production bill",
-      "label": "Production Kubernetes bill halved, $9,483 to $4,745 a month, with nodes drained one at a time. Zero incidents."
-    }
-  ],
   "work": [
     {
       "name": "Smarter Sorting",
@@ -60,7 +34,6 @@
       "url": "https://www.smartersorting.com/",
       "position": "DevOps Engineer",
       "startDate": "2025-07",
-      "endDate": null,
       "summary": "Own cloud infrastructure, the data platform and internal products at a compliance-AI SaaS company, as its only platform engineer.",
       "highlights": [
         "Led the company-wide Snowflake to BigQuery migration as its only engineer, coordinating the cutover with every data-owning team: 1.4 TB across 33 databases and 30+ customer-facing Tableau reports (4,000+ Snowflake-specific SQL queries), zero downtime, ~35% lower compute cost. Traced years of silently wrong data to the legacy ingestion pipeline and fixed it.",
@@ -100,7 +73,6 @@
       "url": "https://pareto.ai/",
       "position": "IT Consultant",
       "startDate": "2026-04",
-      "endDate": null,
       "summary": "Consulting contract alongside Smarter Sorting: building the IT function for a 150+ person AI company, from identity and device management to SOC 2 readiness.",
       "highlights": [
         "Led company-wide MFA enforcement across Google Workspace for 600+ expert accounts plus employees and contractors, rolled out in three phased waves to limit disruption.",
@@ -552,7 +524,33 @@
   "meta": {
     "canonical": "https://vieiraphv2.github.io/",
     "lastModified": "2026-09-18",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "highlights": [
+      {
+        "value": "$600k",
+        "unit": "/year",
+        "tag": "Google Cloud savings",
+        "label": "Google Cloud savings identified and delivered across BigQuery, GKE, Cloud SQL and vendor contracts."
+      },
+      {
+        "value": "1.4 TB",
+        "unit": "",
+        "tag": "Snowflake → BigQuery",
+        "label": "Company-wide warehouse migration: 33 databases and every customer-facing Tableau report, zero downtime, sole engineer."
+      },
+      {
+        "value": "65k",
+        "unit": "tickets",
+        "tag": "Salesforce Cases replaced",
+        "label": "In-house support platform built and live in 13 days; 65,003 tickets and 145,464 messages migrated before the Salesforce sunset."
+      },
+      {
+        "value": "50%",
+        "unit": "",
+        "tag": "GKE production bill",
+        "label": "Production Kubernetes bill halved, $9,483 to $4,745 a month, with nodes drained one at a time. Zero incidents."
+      }
+    ]
   },
   "education": [
     {
@@ -577,28 +575,28 @@
       "name": "Gustavo Valente, CISSP, CISA, CFE, PMP",
       "role": "Global Information Security & Risk Leader, CISO",
       "relation": "Managed Paulo directly",
-      "date": "Jan 2025",
+      "date": "2025-01",
       "quote": "Due to his strong commitment, sense of responsibility, great rapport with colleagues and ability to work well under pressure, Paulo demands little to no management. It was a pleasure working with Paulo, and I would definitely work with him again."
     },
     {
       "name": "Nicole Adams Kraus",
       "role": "Founder at BlueHouse, ex Chief Talent Officer",
       "relation": "Senior to Paulo at SmarterX",
-      "date": "Jan 2025",
+      "date": "2025-01",
       "quote": "His proactive approach to problem-solving set him apart. He consistently identified and addressed potential issues before they impacted operations. His easy-going nature and clear communication style made him effective with both technical and non-technical stakeholders."
     },
     {
       "name": "Jenelle Tortorella Kelly",
       "role": "Revenue & Customer Success Leader",
       "relation": "Senior to Paulo at SmarterX",
-      "date": "Jan 2025",
+      "date": "2025-01",
       "quote": "He was instrumental in the launch of our IT Ops program, streamlining our processes and enhancing our security posture. His ability to drive cross-functional collaboration significantly improved our overall efficiency. Paulo is a genuine and engaging colleague."
     },
     {
       "name": "Henrique Faria",
       "role": "IT Analyst, IAM & SSO",
       "relation": "Worked with Paulo on the same team",
-      "date": "Feb 2025",
+      "date": "2025-02",
       "quote": "With Paulo there is no bad time, he is always delivering great results. Paulo is a person you can count on with eyes closed. He contributed a lot with my development."
     }
   ]

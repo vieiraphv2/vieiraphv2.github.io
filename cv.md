@@ -200,16 +200,16 @@ Keywords: Field support
 ## What colleagues say (LinkedIn recommendations, verbatim)
 
 > "Due to his strong commitment, sense of responsibility, great rapport with colleagues and ability to work well under pressure, Paulo demands little to no management. It was a pleasure working with Paulo, and I would definitely work with him again."
-> — Gustavo Valente, CISSP, CISA, CFE, PMP, Global Information Security & Risk Leader, CISO (Managed Paulo directly, Jan 2025)
+> — Gustavo Valente, CISSP, CISA, CFE, PMP, Global Information Security & Risk Leader, CISO (Managed Paulo directly, 2025-01)
 
 > "His proactive approach to problem-solving set him apart. He consistently identified and addressed potential issues before they impacted operations. His easy-going nature and clear communication style made him effective with both technical and non-technical stakeholders."
-> — Nicole Adams Kraus, Founder at BlueHouse, ex Chief Talent Officer (Senior to Paulo at SmarterX, Jan 2025)
+> — Nicole Adams Kraus, Founder at BlueHouse, ex Chief Talent Officer (Senior to Paulo at SmarterX, 2025-01)
 
 > "He was instrumental in the launch of our IT Ops program, streamlining our processes and enhancing our security posture. His ability to drive cross-functional collaboration significantly improved our overall efficiency. Paulo is a genuine and engaging colleague."
-> — Jenelle Tortorella Kelly, Revenue & Customer Success Leader (Senior to Paulo at SmarterX, Jan 2025)
+> — Jenelle Tortorella Kelly, Revenue & Customer Success Leader (Senior to Paulo at SmarterX, 2025-01)
 
 > "With Paulo there is no bad time, he is always delivering great results. Paulo is a person you can count on with eyes closed. He contributed a lot with my development."
-> — Henrique Faria, IT Analyst, IAM & SSO (Worked with Paulo on the same team, Feb 2025)
+> — Henrique Faria, IT Analyst, IAM & SSO (Worked with Paulo on the same team, 2025-02)
 
 ## Skills
 

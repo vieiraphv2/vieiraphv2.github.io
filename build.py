@@ -43,7 +43,7 @@ PREF = '' if LANG == 'en' else '../'
 LANGJS = ("if(_l==='pt'||(!_l&&/^pt/i.test(navigator.language||'')))location.replace('pt/')" if LANG == 'en'
           else "if(_l==='en')location.replace('../')")
 OTHERCODE = 'pt' if LANG == 'en' else 'en'
-B, W, P, S, LG, H = R["basics"], R["work"], R["projects"], R["skills"], R["languages"], R["highlights"]
+B, W, P, S, LG, H = R["basics"], R["work"], R["projects"], R["skills"], R["languages"], R["meta"]["highlights"]
 ED, AW, REFS = R.get("education", []), R.get("awards", []), R.get("references", [])
 SITE = R["meta"]["canonical"]
 CANON = SITE if LANG == 'en' else SITE + 'pt/'
