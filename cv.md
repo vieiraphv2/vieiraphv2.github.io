@@ -78,7 +78,7 @@ Own cloud infrastructure, the data platform and internal products at a complianc
 - Resolved production data incidents for enterprise retail customers: restored a business-critical reporting dashboard within 5 hours; corrected hazardous-materials data feeding a national retailer's logistics system.
 - Wrote the company standard for programmatic AI access, replacing static API keys with Workload Identity Federation. Added automated AI review of failed CI builds.
 
-Keywords: Google Cloud Platform, BigQuery, GKE, Kubernetes, Terraform, Cloud Run, Cloud SQL, Datastream, Python, TypeScript, Tableau, FinOps, Workload Identity Federation, CI/CD
+Keywords: Google Cloud Platform, BigQuery, Snowflake, SQL, GKE, Kubernetes, Terraform, Cloud Run, Cloud SQL, Datastream, Python, TypeScript, Tableau, FinOps, Workload Identity Federation, CI/CD, Disaster recovery, Incident response, AI agents
 
 ### IT Consultant · Pareto AI
 *Apr 2026 – Present · Contract · Remote*
@@ -92,7 +92,7 @@ Consulting contract alongside Smarter Sorting: building the IT function for a 15
 - Authoring and driving the MDM rollout to bring every company-issued device under central management; assessed data-security implications of contractor devices touching client platforms.
 - Audited Slack licensing and surfaced ~100 idle paid seats; defined the guest model for hybrid workers and compiled the company-wide vendor inventory the procurement team was missing.
 
-Keywords: Google Workspace, GAM, Slack, Rippling, Ashby, Zendesk, Bitwarden, SOC 2, MFA, MDM, Vendor management
+Keywords: Google Workspace, GAM, Slack, Rippling, Ashby, Zendesk, Bitwarden, SOC 2, MFA, MDM, Identity lifecycle, Automation, AI agents, Vendor management
 
 ### IT Operations Specialist · Smarter Sorting
 *Jan 2024 – Jan 2025 · Full-time · Boulder, Colorado, US · Remote*
@@ -106,7 +106,7 @@ Built and ran the company's IT function as its only IT engineer.
 - Owned repository security and organization-wide Google Cloud IAM governance: enforced merge-blocking rules for unresolved security alerts across 16 repositories in two days; migrated 32 individual access grants to a group-based model.
 - Replaced Finance's manual month-end reporting with a Stripe API integration, which also surfaced 1,496 records the manual process had been omitting.
 
-Keywords: Okta, Google Workspace, Jamf, SentinelOne, Jira Service Management, SOC 2, IAM, Stripe API, Identity lifecycle
+Keywords: Okta, Google Workspace, Jamf, SentinelOne, Jira Service Management, SOC 2, IAM, Stripe API, Identity lifecycle, Retool, Proofpoint, GitHub, Automation
 
 ### PL/SQL Analyst · GB Agritech
 *Mar 2025 – Oct 2025 · Contract · Vitória, Espírito Santo, Brazil · Hybrid*
@@ -117,7 +117,7 @@ Support for an ERP built on Oracle Forms.
 - Analysis of Oracle database functions and routines in PL/SQL.
 - Improved support processes; maintained agile workflows in Azure DevOps.
 
-Keywords: PL/SQL, Oracle Forms, Azure DevOps
+Keywords: PL/SQL, Oracle Forms, Azure DevOps, L3 support, Requirements analysis, Incident response, ITSM
 
 ### Senior IT Engineer · TheGuarantors
 *Apr 2025 – Jul 2025 · Full-time · New York City, US · Remote*
@@ -128,7 +128,7 @@ Led the IT team.
 - Worked with Security, HR and Infrastructure to tighten security protocols and unblock critical operational issues.
 - Optimized Okta, Jira, Google Workspace, Slack and Rippling; built API integrations in JavaScript, Bash and Python.
 
-Keywords: Okta, Rippling, Google Workspace, JavaScript, Bash, Python
+Keywords: Okta, Rippling, Google Workspace, JavaScript, Bash, Python, Team leadership, Jira, Slack, REST APIs
 
 ### Internal IT Support · Trustly
 *Apr 2022 – Jan 2024 · Full-time · Vitória, Espírito Santo, Brazil · On-site*
@@ -138,7 +138,7 @@ Keywords: Okta, Rippling, Google Workspace, JavaScript, Bash, Python
 - Built automation for IT tasks that cut response times.
 - Led improvements in inventory control, vendor relations and security policy rollout.
 
-Keywords: IT Service Management, Asset management, Automation
+Keywords: IT Service Management, Asset management, User lifecycle, Onboarding, Offboarding, Okta, Google Workspace, GAM, Jamf, MDM, Apple devices, Jira, Automation, Security, Vendor management
 
 ### Software Support Analyst · Quality WebPosto
 *Mar 2021 – Apr 2022 · Full-time · Vila Velha, Espírito Santo, Brazil · Hybrid*
@@ -147,7 +147,7 @@ Keywords: IT Service Management, Asset management, Automation
 - Administered PostgreSQL databases.
 - Led the support team and trained new hires and interns.
 
-Keywords: PostgreSQL, Incident management, Team leadership
+Keywords: PostgreSQL, Incident management, Team leadership, ERP, Training & mentoring
 
 ### NOC Analyst · Algar Tech
 *Apr 2020 – Feb 2021 · Full-time · Vitória, Espírito Santo, Brazil · Remote*
@@ -155,7 +155,7 @@ Keywords: PostgreSQL, Incident management, Team leadership
 - Bilingual network analyst for VALE S/A, supporting operations in 27 countries.
 - Mesh, LTE and radio networks, BGP, MPLS, DMVPN, Cisco, CA Spectrum, BMC Remedy.
 
-Keywords: Networks, BGP, MPLS, Cisco, ITIL
+Keywords: Networks, BGP, MPLS, DMVPN, Cisco, CA Spectrum, BMC Remedy, NOC, ITIL, Incident management
 
 ### Software Support Analyst · Prosystem
 *Oct 2017 – Apr 2020 · Full-time · Vitória, Espírito Santo, Brazil · Hybrid*
@@ -164,35 +164,35 @@ Keywords: Networks, BGP, MPLS, Cisco, ITIL
 - Improvement requests and incident analysis for the development team.
 - MySQL administration and Windows network support.
 
-Keywords: MySQL, ERP, ITIL
+Keywords: MySQL, ERP, ITIL, Customer support, Windows networks, Incident management
 
 ### Service Desk Technician · Hsibrasil Soluções Corporativas em TI
 *Sep 2015 – Oct 2017 · Full-time · Vila Velha, Espírito Santo, Brazil · On-site*
 
 - Windows, networks, CCTV and IT operations support for corporate and individual clients.
 
-Keywords: Windows, Networks, CCTV
+Keywords: Windows, Networks, CCTV, Service desk, ITIL
 
 ### Head of Operations · Ronicar Tecnologia Automotiva
 *Dec 2012 – May 2015 · Full-time · Vila Velha, Espírito Santo, Brazil*
 
 - Service and team management, finance and budgeting, inventory, customer relations, IT.
 
-Keywords: Operations, Team management
+Keywords: Operations, Team management, Budgeting, Customer relations
 
 ### IT Instructor · Prepara Cursos, Viaensino, Microcamp Tecnologia
 *May 2011 – Dec 2012 · Full-time · Vila Velha and Vitória, Espírito Santo, Brazil · On-site*
 
 - Taught IT fundamentals, graphic design, Photoshop, and PC assembly and maintenance.
 
-Keywords: Teaching
+Keywords: Teaching, Photoshop, Hardware maintenance
 
 ### Technical Assistant · Automa Comércio e Serviços
 *Dec 2010 – Jul 2011 · Full-time · Vila Velha, Espírito Santo, Brazil*
 
 - Automatic gates, network printers, PC maintenance, CCTV, customer service.
 
-Keywords: Field support
+Keywords: Field support, CCTV, Hardware maintenance
 
 ## What colleagues say (LinkedIn recommendations, verbatim)
 

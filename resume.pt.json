@@ -23,6 +23,27 @@
         "Substituí a revisão quinzenal manual de logs de segurança por um job no Cloud Run que analisa logs de Cloud Armor, firewall, bancos e Auth0 e abre os próprios tickets no Jira.",
         "Resolvi incidentes de dados em produção para varejistas enterprise: restaurei um dashboard crítico de negócio em 5 horas; corrigi dados de materiais perigosos que alimentavam a logística de um varejista nacional.",
         "Escrevi o padrão da empresa para acesso programático de IA, substituindo chaves de API estáticas por Workload Identity Federation. Adicionei revisão automática por IA de builds de CI que falham."
+      ],
+      "keywords": [
+        "Google Cloud Platform",
+        "BigQuery",
+        "Snowflake",
+        "SQL",
+        "GKE",
+        "Kubernetes",
+        "Terraform",
+        "Cloud Run",
+        "Cloud SQL",
+        "Datastream",
+        "Python",
+        "TypeScript",
+        "Tableau",
+        "FinOps",
+        "Workload Identity Federation",
+        "CI/CD",
+        "Recuperação de desastres",
+        "Resposta a incidentes",
+        "Agentes de IA"
       ]
     },
     {
@@ -35,6 +56,22 @@
         "Dono do provisionamento e desprovisionamento em Google Workspace, Slack, Zendesk e outros sistemas para funcionários, contratados e híbridos; automatizei o fluxo Ashby para ticket de TI para Slack em novas contratações e tickets de offboarding a partir de desligamentos no Rippling.",
         "Autor e condutor do rollout de MDM para colocar todo dispositivo corporativo sob gestão central; avaliei implicações de segurança de dispositivos de contratados que tocam plataformas de clientes.",
         "Auditei o licenciamento do Slack e revelei ~100 assentos pagos ociosos; defini o modelo de convidados para híbridos e compilei o inventário de fornecedores que faltava ao time de compras."
+      ],
+      "keywords": [
+        "Google Workspace",
+        "GAM",
+        "Slack",
+        "Rippling",
+        "Ashby",
+        "Zendesk",
+        "Bitwarden",
+        "SOC 2",
+        "MFA",
+        "MDM",
+        "Ciclo de vida de identidade",
+        "Automação",
+        "Agentes de IA",
+        "Gestão de fornecedores"
       ]
     },
     {
@@ -47,6 +84,21 @@
         "Apoiei a primeira certificação SOC 2 Type 2 da empresa.",
         "Dono da segurança de repositórios e da governança de IAM do Google Cloud em toda a organização: apliquei bloqueio de merge para alertas de segurança abertos em 16 repositórios em dois dias; migrei 32 concessões individuais de acesso para um modelo baseado em grupos.",
         "Substituí o relatório manual de fechamento de mês do Financeiro por uma integração com a API do Stripe, que também revelou 1.496 registros que o processo manual vinha omitindo."
+      ],
+      "keywords": [
+        "Okta",
+        "Google Workspace",
+        "Jamf",
+        "SentinelOne",
+        "Jira Service Management",
+        "SOC 2",
+        "IAM",
+        "Stripe API",
+        "Ciclo de vida de identidade",
+        "Retool",
+        "Proofpoint",
+        "GitHub",
+        "Automação"
       ]
     },
     {
@@ -56,6 +108,15 @@
         "Análise de requisitos e suporte N3 a incidentes escalados.",
         "Análise de funções e rotinas de banco Oracle em PL/SQL.",
         "Melhoria de processos de suporte; fluxos ágeis mantidos no Azure DevOps."
+      ],
+      "keywords": [
+        "PL/SQL",
+        "Oracle Forms",
+        "Azure DevOps",
+        "Suporte N3",
+        "Análise de requisitos",
+        "Resposta a incidentes",
+        "ITSM"
       ]
     },
     {
@@ -65,6 +126,18 @@
         "Dono do ciclo de vida de usuários, controle de acesso, automações e documentação de processos, aproveitando o ferramental existente em vez de adicionar plataformas.",
         "Trabalhei com Segurança, RH e Infraestrutura para reforçar protocolos de segurança e destravar questões operacionais críticas.",
         "Otimizei Okta, Jira, Google Workspace, Slack e Rippling; construí integrações de API em JavaScript, Bash e Python."
+      ],
+      "keywords": [
+        "Okta",
+        "Rippling",
+        "Google Workspace",
+        "JavaScript",
+        "Bash",
+        "Python",
+        "Liderança de equipe",
+        "Jira",
+        "Slack",
+        "APIs REST"
       ]
     },
     {
@@ -78,7 +151,19 @@
       "keywords": [
         "Gestão de serviços de TI",
         "Gestão de ativos",
-        "Automação"
+        "Ciclo de vida de usuários",
+        "Onboarding",
+        "Offboarding",
+        "Okta",
+        "Google Workspace",
+        "GAM",
+        "Jamf",
+        "MDM",
+        "Dispositivos Apple",
+        "Jira",
+        "Automação",
+        "Segurança",
+        "Gestão de fornecedores"
       ]
     },
     {
@@ -87,6 +172,13 @@
         "Conduzi a resposta a incidentes e transformei solicitações em casos de uso para o time de desenvolvimento.",
         "Administrei bancos de dados PostgreSQL.",
         "Liderei o time de suporte e treinei novos funcionários e estagiários."
+      ],
+      "keywords": [
+        "PostgreSQL",
+        "Gestão de incidentes",
+        "Liderança de equipe",
+        "ERP",
+        "Treinamento e mentoria"
       ]
     },
     {
@@ -94,6 +186,18 @@
       "highlights": [
         "Analista de redes bilíngue para a VALE S/A, apoiando operações em 27 países.",
         "Redes Mesh, LTE e rádio, BGP, MPLS, DMVPN, Cisco, CA Spectrum, BMC Remedy."
+      ],
+      "keywords": [
+        "Redes",
+        "BGP",
+        "MPLS",
+        "DMVPN",
+        "Cisco",
+        "CA Spectrum",
+        "BMC Remedy",
+        "NOC",
+        "ITIL",
+        "Gestão de incidentes"
       ]
     },
     {
@@ -102,12 +206,27 @@
         "Suporte a ERP, gestão de incidentes e atendimento ao cliente.",
         "Solicitações de melhoria e análise de incidentes para o time de desenvolvimento.",
         "Administração de MySQL e suporte a redes Windows."
+      ],
+      "keywords": [
+        "MySQL",
+        "ERP",
+        "ITIL",
+        "Atendimento ao cliente",
+        "Redes Windows",
+        "Gestão de incidentes"
       ]
     },
     {
       "position": "Técnico de Service Desk",
       "highlights": [
         "Suporte a Windows, redes, CFTV e operações de TI para clientes corporativos e individuais."
+      ],
+      "keywords": [
+        "Windows",
+        "Redes",
+        "CFTV",
+        "Service desk",
+        "ITIL"
       ]
     },
     {
@@ -117,7 +236,9 @@
       ],
       "keywords": [
         "Operações",
-        "Gestão de equipe"
+        "Gestão de equipe",
+        "Orçamento",
+        "Relacionamento com clientes"
       ]
     },
     {
@@ -126,7 +247,9 @@
         "Lecionei fundamentos de informática, design gráfico, Photoshop e montagem e manutenção de computadores."
       ],
       "keywords": [
-        "Ensino"
+        "Ensino",
+        "Photoshop",
+        "Manutenção de hardware"
       ]
     },
     {
@@ -135,7 +258,9 @@
         "Portões automáticos, impressoras de rede, manutenção de computadores, CFTV e atendimento ao cliente."
       ],
       "keywords": [
-        "Suporte de campo"
+        "Suporte de campo",
+        "CFTV",
+        "Manutenção de hardware"
       ]
     }
   ],

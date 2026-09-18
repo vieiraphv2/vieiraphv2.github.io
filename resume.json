@@ -51,6 +51,8 @@
       "keywords": [
         "Google Cloud Platform",
         "BigQuery",
+        "Snowflake",
+        "SQL",
         "GKE",
         "Kubernetes",
         "Terraform",
@@ -62,7 +64,10 @@
         "Tableau",
         "FinOps",
         "Workload Identity Federation",
-        "CI/CD"
+        "CI/CD",
+        "Disaster recovery",
+        "Incident response",
+        "AI agents"
       ],
       "type": "Full-time",
       "logo": "logos/smarter-sorting.svg"
@@ -93,6 +98,9 @@
         "SOC 2",
         "MFA",
         "MDM",
+        "Identity lifecycle",
+        "Automation",
+        "AI agents",
         "Vendor management"
       ],
       "type": "Contract",
@@ -123,7 +131,11 @@
         "SOC 2",
         "IAM",
         "Stripe API",
-        "Identity lifecycle"
+        "Identity lifecycle",
+        "Retool",
+        "Proofpoint",
+        "GitHub",
+        "Automation"
       ],
       "type": "Full-time",
       "logo": "logos/smarter-sorting.svg"
@@ -143,7 +155,11 @@
       "keywords": [
         "PL/SQL",
         "Oracle Forms",
-        "Azure DevOps"
+        "Azure DevOps",
+        "L3 support",
+        "Requirements analysis",
+        "Incident response",
+        "ITSM"
       ],
       "type": "Contract",
       "logo": "logos/gb-agritech.svg",
@@ -167,7 +183,11 @@
         "Google Workspace",
         "JavaScript",
         "Bash",
-        "Python"
+        "Python",
+        "Team leadership",
+        "Jira",
+        "Slack",
+        "REST APIs"
       ],
       "type": "Full-time",
       "logo": "logos/theguarantors.svg"
@@ -187,7 +207,19 @@
       "keywords": [
         "IT Service Management",
         "Asset management",
-        "Automation"
+        "User lifecycle",
+        "Onboarding",
+        "Offboarding",
+        "Okta",
+        "Google Workspace",
+        "GAM",
+        "Jamf",
+        "MDM",
+        "Apple devices",
+        "Jira",
+        "Automation",
+        "Security",
+        "Vendor management"
       ],
       "type": "Full-time",
       "logo": "logos/trustly.svg",
@@ -207,7 +239,9 @@
       "keywords": [
         "PostgreSQL",
         "Incident management",
-        "Team leadership"
+        "Team leadership",
+        "ERP",
+        "Training & mentoring"
       ],
       "type": "Full-time",
       "logo": "logos/quality-webposto.svg",
@@ -227,8 +261,13 @@
         "Networks",
         "BGP",
         "MPLS",
+        "DMVPN",
         "Cisco",
-        "ITIL"
+        "CA Spectrum",
+        "BMC Remedy",
+        "NOC",
+        "ITIL",
+        "Incident management"
       ],
       "type": "Full-time",
       "logo": "logos/algar-tech.svg"
@@ -247,7 +286,10 @@
       "keywords": [
         "MySQL",
         "ERP",
-        "ITIL"
+        "ITIL",
+        "Customer support",
+        "Windows networks",
+        "Incident management"
       ],
       "type": "Full-time",
       "logo": "logos/prosystem.svg",
@@ -265,7 +307,9 @@
       "keywords": [
         "Windows",
         "Networks",
-        "CCTV"
+        "CCTV",
+        "Service desk",
+        "ITIL"
       ],
       "type": "Full-time"
     },
@@ -280,7 +324,9 @@
       ],
       "keywords": [
         "Operations",
-        "Team management"
+        "Team management",
+        "Budgeting",
+        "Customer relations"
       ],
       "type": "Full-time"
     },
@@ -294,7 +340,9 @@
         "Taught IT fundamentals, graphic design, Photoshop, and PC assembly and maintenance."
       ],
       "keywords": [
-        "Teaching"
+        "Teaching",
+        "Photoshop",
+        "Hardware maintenance"
       ],
       "type": "Full-time",
       "url": "https://www.microcamp.com.br/"
@@ -309,7 +357,9 @@
         "Automatic gates, network printers, PC maintenance, CCTV, customer service."
       ],
       "keywords": [
-        "Field support"
+        "Field support",
+        "CCTV",
+        "Hardware maintenance"
       ],
       "type": "Full-time"
     }
