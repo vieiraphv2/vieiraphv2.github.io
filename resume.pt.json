@@ -1,0 +1,290 @@
+{
+  "basics": {
+    "label": "Engenheiro DevOps & Plataforma | Operações de TI",
+    "tagline": "Paulo Vieira Silva é Engenheiro DevOps e de Plataforma, responsável pelo Google Cloud, pela plataforma de dados e pelos produtos internos da Smarter Sorting, e Consultor de TI na Pareto AI. Mais de $600 mil/ano em economias de nuvem entregues; 1,4 TB migrados sem downtime.",
+    "summary": "Engenheiro DevOps e de plataforma com mais de 10 anos em TI.\n\nMinha força é descobrir o que está realmente acontecendo e trabalhar na solução, independente de área, ferramenta, complexidade ou tamanho da tarefa.\n\nEssa amplitude vem de uma carreira que cobre toda a largura da operação de tecnologia, de NOC para mineração global e suporte a ERP até identidade, segurança, infraestrutura de nuvem, plataformas de dados e engenharia de produtos internos.\n\nOs últimos doze meses, em números:\n- Mais de $600 mil/ano em economias de nuvem identificadas e entregues, usando IA para construir ferramentas, sistemas e processos internos confiáveis.\n- Migração de Snowflake para BigQuery: 1,4 TB em 33 bancos de dados, sem interrupção de serviço e com custo de computação ~35% menor; 30+ relatórios Tableau com 4.000+ SQLs específicos de Snowflake migrados.\n- Salesforce Cases substituído por uma plataforma de suporte construída em 13 dias, hoje com 65.003 tickets migrados.\n- Conta do Kubernetes de produção cortada pela metade, com zero incidentes.\n\nO que os números não mostram: eu documento o que construo, ensino as ferramentas a quem precisar e deixo cada sistema mais fácil de operar do que encontrei. O crescimento do time ao meu redor faz parte da entrega.",
+    "location": {
+      "remote": "Remoto, horário dos EUA"
+    }
+  },
+  "work": [
+    {
+      "position": "Engenheiro DevOps",
+      "summary": "Responsável pela infraestrutura de nuvem, pela plataforma de dados e pelos produtos internos de uma SaaS de IA para compliance, como único engenheiro de plataforma.",
+      "highlights": [
+        "Liderei a migração de Snowflake para BigQuery como seu único engenheiro, coordenando o cutover com cada time dono de dados: 1,4 TB em 33 bancos e 30+ relatórios Tableau de clientes (4.000+ SQLs específicos de Snowflake), zero downtime e custo de computação ~35% menor. Rastreei anos de dados silenciosamente errados até o pipeline de ingestão legado e corrigi.",
+        "Construí o ferramental que tornou a migração possível: um tradutor de SQL Snowflake para BigQuery ciente de schema, um conversor de workbooks Tableau em um clique e um navegador de schemas cobrindo 5.400+ tabelas.",
+        "Construí a plataforma de suporte que substituiu o Salesforce Cases em 13 dias: e-mail virando ticket, central de ajuda pública, base de conhecimento, RBAC e anexos. 65.003 tickets e 145.464 mensagens migrados, no ar antes do desligamento do Salesforce.",
+        "Liderei o programa de custos do Google Cloud, identificando e entregando mais de $600 mil/ano em economias. Diagnostiquei uma má configuração de BigQuery custando ~$38.000/mês e validei a correção contra o billing export (redução de 98,4%).",
+        "Cortei os dois clusters GKE de $19.574/mês: right-sizing de dezenas de serviços, 38 serviços mortos desligados com aval dos donos, 9 dos 18 nós de produção drenados um por vez, staging movido para Spot em AMD. Conta de produção pela metade ($9.483 para $4.745); ~$140 mil/ano economizados hoje, ~$160 mil quando o desconto de uso comprometido entrar. Zero downtime, zero incidentes.",
+        "Substituí replicação de dados de terceiros por pipelines internos: um ETL em Python no Cloud Run sincronizando 196 objetos do Salesforce diariamente, ingestão da API do Stripe no BigQuery e change data capture com Datastream em quatro ambientes.",
+        "Entreguei um portal multi-tenant de arquivos com API REST pública (construído em dois dias depois que um varejista recusou SFTP, Dropbox e Drive) e um serviço de acesso somente leitura a bancos sem distribuir credenciais.",
+        "Rastreei meses de testes de restore falhando até 5,5 TB de WAL retidos por dois replication slots mortos, completei o primeiro restore bem-sucedido (407 GB) e lancei point-in-time recovery, testes de restore automatizados e alertas de WAL em toda instância de produção.",
+        "Substituí a revisão quinzenal manual de logs de segurança por um job no Cloud Run que analisa logs de Cloud Armor, firewall, bancos e Auth0 e abre os próprios tickets no Jira.",
+        "Resolvi incidentes de dados em produção para varejistas enterprise: restaurei um dashboard crítico de negócio em 5 horas; corrigi dados de materiais perigosos que alimentavam a logística de um varejista nacional.",
+        "Escrevi o padrão da empresa para acesso programático de IA, substituindo chaves de API estáticas por Workload Identity Federation. Adicionei revisão automática por IA de builds de CI que falham."
+      ]
+    },
+    {
+      "position": "Consultor de TI",
+      "summary": "Contrato de consultoria em paralelo à Smarter Sorting: construindo a função de TI de uma empresa de IA com mais de 150 pessoas, de identidade e gestão de dispositivos a preparação para SOC 2.",
+      "highlights": [
+        "Liderei a ativação de MFA em toda a empresa no Google Workspace, cobrindo 600+ contas de experts além de funcionários e contratados, em três ondas para limitar disrupção.",
+        "Construí uma ferramenta self-service /mfa-unblock no Slack que entrega códigos de backup do Google no e-mail de recuperação, cortando a carga dos times de Suporte e Trust sem enfraquecer a verificação de identidade.",
+        "Conduzi a preparação para auditoria SOC 2: planilha de controles e mapeamento de controles técnicos com a Engenharia; assessorei sobre impacto de FedRAMP e residência de dados em mudanças de infraestrutura do Slack.",
+        "Dono do provisionamento e desprovisionamento em Google Workspace, Slack, Zendesk e outros sistemas para funcionários, contratados e híbridos; automatizei o fluxo Ashby para ticket de TI para Slack em novas contratações e tickets de offboarding a partir de desligamentos no Rippling.",
+        "Autor e condutor do rollout de MDM para colocar todo dispositivo corporativo sob gestão central; avaliei implicações de segurança de dispositivos de contratados que tocam plataformas de clientes.",
+        "Auditei o licenciamento do Slack (148 usuários faturáveis de 251 assentos comprados) e defini o modelo de convidados para trabalhadores híbridos; compilei o inventário de fornecedores que faltava ao time de compras.",
+        "Arquivei 690 transcrições, destaques e notas de reuniões do tl;dv em um drive compartilhado restrito antes do cancelamento do fornecedor, com manifesto do que a API não conseguia exportar."
+      ]
+    },
+    {
+      "position": "Especialista em Operações de TI",
+      "summary": "Construí e operei a função de TI da empresa como seu único engenheiro de TI.",
+      "highlights": [
+        "Operei o suporte de linha de frente e o ciclo de vida completo de identidade para 100+ usuários em 30+ sistemas, resolvendo ~370 chamados no primeiro ano.",
+        "Administrei Okta SSO, Google Workspace, Jira Service Management e a frota de dispositivos em Jamf e SentinelOne. Integrei o Okta à plataforma de RH e ao gerenciador de senhas da empresa, encerrando o provisionamento manual de contas.",
+        "Defini o modelo de service desk e o automatizei no Jira: metas de resposta e resolução por tipo de chamado, caminhos de escalação, criação de tickets pelo Slack e fluxos de onboarding/offboarding que registram prova de desativação de conta para auditoria.",
+        "Apoiei a primeira certificação SOC 2 Type 2 da empresa.",
+        "Dono da segurança de repositórios e da governança de IAM do Google Cloud em toda a organização: apliquei bloqueio de merge para alertas de segurança abertos em 16 repositórios em dois dias; migrei 32 concessões individuais de acesso para um modelo baseado em grupos.",
+        "Substituí o relatório manual de fechamento de mês do Financeiro por uma integração com a API do Stripe, que também revelou 1.496 registros que o processo manual vinha omitindo."
+      ]
+    },
+    {
+      "position": "Analista PL/SQL",
+      "summary": "Suporte a um ERP construído em Oracle Forms.",
+      "highlights": [
+        "Análise de requisitos e suporte N3 a incidentes escalados.",
+        "Análise de funções e rotinas de banco Oracle em PL/SQL.",
+        "Melhoria de processos de suporte; fluxos ágeis mantidos no Azure DevOps."
+      ]
+    },
+    {
+      "position": "Engenheiro de TI Sênior",
+      "summary": "Liderei o time de TI.",
+      "highlights": [
+        "Dono do ciclo de vida de usuários, controle de acesso, automações e documentação de processos, aproveitando o ferramental existente em vez de adicionar plataformas.",
+        "Trabalhei com Segurança, RH e Infraestrutura para reforçar protocolos de segurança e destravar questões operacionais críticas.",
+        "Otimizei Okta, Jira, Google Workspace, Slack e Rippling; construí integrações de API em JavaScript, Bash e Python."
+      ]
+    },
+    {
+      "position": "Suporte de TI Interno",
+      "highlights": [
+        "Suporte técnico bilíngue (português/inglês) para usuários em todos os fusos dos EUA.",
+        "Gerenciei solicitações de usuários, inventário de ativos, onboarding/offboarding e melhorias nos processos internos de TI.",
+        "Construí automações de TI que reduziram tempos de resposta.",
+        "Liderei melhorias em controle de inventário, relação com fornecedores e implantação de políticas de segurança."
+      ]
+    },
+    {
+      "position": "Analista de Suporte de Software",
+      "highlights": [
+        "Conduzi a resposta a incidentes e transformei solicitações em casos de uso para o time de desenvolvimento.",
+        "Administrei bancos de dados PostgreSQL.",
+        "Liderei o time de suporte e treinei novos funcionários e estagiários."
+      ]
+    },
+    {
+      "position": "Analista de NOC",
+      "highlights": [
+        "Analista de redes bilíngue para a VALE S/A, apoiando operações em 27 países.",
+        "Redes Mesh, LTE e rádio, BGP, MPLS, DMVPN, Cisco, CA Spectrum, BMC Remedy."
+      ]
+    },
+    {
+      "position": "Analista de Suporte de Software",
+      "highlights": [
+        "Suporte a ERP, gestão de incidentes e atendimento ao cliente.",
+        "Solicitações de melhoria e análise de incidentes para o time de desenvolvimento.",
+        "Administração de MySQL e suporte a redes Windows."
+      ]
+    },
+    {
+      "position": "Técnico de Service Desk",
+      "highlights": [
+        "Suporte a Windows, redes, CFTV e operações de TI para clientes corporativos e individuais."
+      ]
+    },
+    {
+      "position": "Chefe de Operações",
+      "highlights": [
+        "Gestão de serviços e equipe, finanças e orçamento, estoque, relacionamento com clientes e TI.",
+        "Eletrônica embarcada, injeção eletrônica e diagnóstico automotivo avançado."
+      ]
+    },
+    {
+      "position": "Instrutor de Informática",
+      "highlights": [
+        "Lecionei fundamentos de informática, design gráfico, Photoshop, montagem e manutenção de computadores, inglês básico e administração básica."
+      ]
+    },
+    {
+      "position": "Assistente Técnico",
+      "highlights": [
+        "Portões automáticos, impressoras de rede, manutenção de computadores, CFTV e atendimento ao cliente."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "roles": [
+        "Engenheiro líder"
+      ],
+      "description": "Os dois clusters Kubernetes da Smarter Sorting, de julho a setembro de 2026. Medir primeiro, right-sizing das reservas, desligar o que ninguém chama, drenar nós um por vez. Ponto de partida de $19.574/mês; ~$140 mil/ano economizados hoje, ~$160 mil quando o passo de uso comprometido entrar. Zero downtime.",
+      "highlights": [
+        "38 serviços mortos desligados, cada um com aval do dono e caminho de volta documentado",
+        "18 máquinas de produção reduzidas a 9, drenadas uma por vez",
+        "Staging em capacidade Spot preemptível com AMD: ~$83 mil/ano"
+      ]
+    },
+    {
+      "roles": [
+        "Único engenheiro"
+      ],
+      "description": "A plataforma de suporte que substituiu o Salesforce Cases e o support.smartersorting.com. Escopo definido em 10 de julho de 2026; primeira versão construída em horas no dia 22; no ar no dia 23; Salesforce desligado no dia 31. E-mail virando ticket via API do Gmail, central de ajuda pública, base de conhecimento, atribuição, RBAC, respostas ricas e anexos. 65.003 tickets, 145.464 mensagens e 100 artigos migrados de snapshots do BigQuery.",
+      "highlights": [
+        "Prioridades definidas por dados reais de uso: 66% dos e-mails recebidos trazem anexos, 4 agentes respondem por 88% dos casos",
+        "Três serviços Cloud Run e Cloud SQL, todo deploy via Terraform com estado no HCP Terraform",
+        "Chat ao vivo e CSAT desenhados como próximo passo"
+      ]
+    },
+    {
+      "roles": [
+        "Único engenheiro"
+      ],
+      "description": "Migração do warehouse inteiro por um engenheiro, de julho de 2025 ao cutover de 1º de abril de 2026: 1,4 TB, 33 bancos, 451 workbooks inventariados, todos os relatórios Tableau de clientes. Sem interrupção de serviço, computação ~35% mais barata, e anos de dados silenciosamente errados rastreados ao pipeline legado e corrigidos (~2.000 registros fantasmas).",
+      "highlights": [
+        "Tableau Migration Center: navegador de schemas sobre 5.445 tabelas e 131 mil colunas, tradutor de SQL com 30+ conversões, conversor de workbooks em um clique (um dashboard executivo da Costco em ~15 minutos)",
+        "Procedure de exportação de banco inteiro que reduziu a migração a três cliques",
+        "Extensão de Chrome para os usuários resgatarem seus worksheets de SQL antes do desligamento",
+        "Escolhido como showcase de IA no all-hands de fevereiro de 2026"
+      ]
+    },
+    {
+      "roles": [
+        "Design e desenvolvimento"
+      ],
+      "description": "Portal de arquivos multi-tenant construído em dois dias depois que um varejista nacional recusou custódia via SFTP, Dropbox e Drive. Serverless no Cloud Run com API REST pública: uploads de até 5 GB por arquivo e 10.000 arquivos por lote, tokens com hash, proteção contra SSRF, log de auditoria, URLs perenes e revogáveis sob o domínio da empresa.",
+      "highlights": [
+        "59.717 arquivos e 2,4 GB em um único upload de teste",
+        "800+ documentos servidos a um varejista sob URLs estáveis; um modo bridge re-hospeda fichas de segurança de terceiros"
+      ]
+    },
+    {
+      "roles": [
+        "CTO e cofundador"
+      ],
+      "description": "Cofundador e CTO de um marketplace brasileiro para contratação de freelancers locais: pagamento por PIX liberado no fechamento do serviço, verificação de identidade com OCR de documento e comparação facial, chat em tempo real, disputas e avaliações. Next.js, Supabase e Cloud Run, em produção na Vercel.",
+      "highlights": [
+        "37 tabelas sob row-level security, 217 testes automatizados, auditoria de segurança concluída",
+        "Verificação automática no Cloud Run: OCR do Google Vision e comparação facial, revisão manual após 3 tentativas"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Nuvem e infraestrutura",
+      "keywords": [
+        "Google Cloud Platform",
+        "Cloud Run",
+        "GKE / Kubernetes",
+        "Cloud SQL",
+        "IAM e Workload Identity Federation",
+        "Terraform",
+        "Helm",
+        "Docker",
+        "FinOps"
+      ]
+    },
+    {
+      "name": "Dados",
+      "keywords": [
+        "BigQuery",
+        "Snowflake",
+        "PostgreSQL",
+        "Oracle PL/SQL",
+        "MySQL",
+        "Datastream (CDC)",
+        "Pipelines de ETL",
+        "Tableau"
+      ]
+    },
+    {
+      "name": "Linguagens e scripting",
+      "keywords": [
+        "Python",
+        "SQL",
+        "Bash",
+        "JavaScript / TypeScript",
+        "PowerShell",
+        "APIs REST"
+      ]
+    },
+    {
+      "name": "CI/CD e observabilidade",
+      "keywords": [
+        "CircleCI",
+        "GitHub Actions",
+        "Datadog",
+        "Cloud Logging"
+      ]
+    },
+    {
+      "name": "Engenharia de IA",
+      "keywords": [
+        "Claude e agentes de código",
+        "Vertex AI",
+        "Design de workflows com agentes",
+        "Governança de acesso de IA (WIF no lugar de chaves estáticas)"
+      ]
+    },
+    {
+      "name": "Identidade e segurança",
+      "keywords": [
+        "Okta",
+        "Auth0",
+        "Google Workspace",
+        "Jamf",
+        "SentinelOne",
+        "SOC 2",
+        "Resposta a incidentes"
+      ]
+    },
+    {
+      "name": "Gestão de serviços",
+      "keywords": [
+        "Jira Service Management",
+        "Desenho de SLA",
+        "Processos de escalação",
+        "Documentação técnica"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Português",
+      "fluency": "Nativo"
+    },
+    {
+      "language": "Inglês",
+      "fluency": "Fluente"
+    },
+    {
+      "language": "Espanhol",
+      "fluency": "Básico"
+    }
+  ],
+  "education": [
+    {
+      "studyType": "Bacharelado em andamento:",
+      "area": "Engenharia de Software",
+      "location": "Brasil"
+    }
+  ],
+  "awards": [
+    {
+      "summary": "Equipe de duas pessoas; construímos um motor automatizado de alocação de custos de nuvem por cliente em um sprint de três semanas com mentores do Google."
+    }
+  ]
+}

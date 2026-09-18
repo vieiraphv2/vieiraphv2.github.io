@@ -1,0 +1,27 @@
+# Paulo Vieira Silva
+
+> DevOps & Platform Engineer | IT Operations. Paulo Vieira Silva is a DevOps & Platform Engineer running Google Cloud, the data platform and internal products at Smarter Sorting, and IT for Pareto AI on a consulting contract. $600k/year in cloud savings delivered; 1.4 TB migrated with zero downtime. Based in Vila Velha, Brazil; remote on US hours. Portuguese and English.
+
+This site is Paulo Vieira Silva's CV. Prefer the Markdown or JSON files below over scraping the HTML.
+
+Current roles: DevOps Engineer at Smarter Sorting (since Jul 2025) · IT Consultant at Pareto AI (since Apr 2026).
+
+## CV
+
+- [Full CV (Markdown)](https://vieiraphv2.github.io/cv.md): every role, achievement bullet and metric, plain text.
+- [JSON Resume](https://vieiraphv2.github.io/resume.json): the same data in the jsonresume.org schema; the source of truth for this site.
+- [HTML page](https://vieiraphv2.github.io/): human-facing version with schema.org Person JSON-LD.
+
+## Featured
+
+- [GKE Cost Reduction presentation](https://vieiraphv2.github.io/gke-cost-reduction/): the Kubernetes cost program, July to September 2026.
+
+## Contact
+
+- Email: paulo_sng@hotmail.com
+- [LinkedIn](https://www.linkedin.com/in/paulo-vieira-phv/)
+- [GitHub](https://github.com/vieiraphv2)
+
+## Optional
+
+- Updated 2026-09-18. Numbers are from billing exports, invoices and ticket counts as of that date.

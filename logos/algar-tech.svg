@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Rounded-tip triangles: heavy same-color stroke with round joins over a smaller core. -->
+  <g stroke-width="13" stroke-linejoin="round">
+    <path d="M25 21 L25 43 L44 32 Z" fill="#2F80C3" stroke="#2F80C3"/>
+    <path d="M61 39 L61 61 L80 50 Z" fill="#EFC31D" stroke="#EFC31D"/>
+    <path d="M25 57 L25 79 L44 68 Z" fill="#1E8A44" stroke="#1E8A44"/>
+  </g>
+</svg>
