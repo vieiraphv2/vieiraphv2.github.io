@@ -11,6 +11,7 @@ Current roles: DevOps Engineer at Smarter Sorting (since Jul 2025) · IT Consult
 - [Full CV (Markdown)](https://vieiraphv2.github.io/cv.md): every role, achievement bullet and metric, plain text.
 - [JSON Resume](https://vieiraphv2.github.io/resume.json): the same data in the jsonresume.org schema; the source of truth for this site.
 - [HTML page](https://vieiraphv2.github.io/): human-facing version with schema.org Person JSON-LD.
+- [PDF](https://vieiraphv2.github.io/Paulo-Vieira-Silva-CV.pdf): single-column, ATS-friendly PDF of the same CV ([Portuguese](https://vieiraphv2.github.io/pt/Paulo-Vieira-Silva-Curriculo.pdf)).
 
 ## Featured
 

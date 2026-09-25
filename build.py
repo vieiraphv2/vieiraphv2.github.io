@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Render index.html, cv.md and llms.txt from resume.json. Stdlib only: python3 build.py"""
-import json, html, datetime, pathlib, sys
+"""Render index.html, cv.md, llms.txt and the ATS PDF from resume.json. Stdlib only (PDF via headless Chrome): python3 build.py"""
+import json, html, datetime, pathlib, sys, os, shutil, subprocess, tempfile, time
 LANG = sys.argv[1] if len(sys.argv) > 1 else 'en'
 
 ROOT = pathlib.Path(__file__).parent
@@ -25,7 +25,9 @@ UI = {
    aiB2='JSON Resume schema', aiB3='This page also carries schema.org <code>Person</code> data as JSON-LD.',
    updated='Updated', source='source', mdTitle='Plain Markdown version for AI tools',
    navAria='Sections', themeToDark='Switch to dark theme', themeToLight='Switch to light theme', themeTitle='Toggle dark / light',
-   types={}, modes={}, places={}, mon=None, monfull=None, other='PT', otherHref='pt/', otherLang='pt-BR', oglocale='en_US'),
+   types={}, modes={}, places={}, mon=None, monfull=None, other='PT', otherHref='pt/', otherLang='pt-BR', oglocale='en_US',
+   dl='Download CV', dlTitle='PDF, single column, formatted for applicant tracking systems', pdf='Paulo-Vieira-Silva-CV.pdf', page='Letter',
+   atsSum='Summary', atsExp='Professional Experience', atsEdu='Education', atsAw='Awards', kw='Skills', earlier='Earlier experience', cv='CV'),
  'pt': dict(html='pt-BR', country='Brasil', skip='Pular para o conteúdo', about='Sobre', now='Agora', loc='Localização',
    langs='Idiomas', exp='Experiência', expand='Expandir tudo', collapse='Recolher tudo', personal='Projetos pessoais',
    skills='Habilidades', edu='Formação e credenciais', projects='Projetos', at='na', since='desde', present='Atual',
@@ -38,7 +40,9 @@ UI = {
    places={'Boulder, Colorado, US': 'Boulder, Colorado, EUA', 'New York City, US': 'Nova York, EUA'},
    mon=['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'],
    monfull=['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
-   other='EN', otherHref='../', otherLang='en', oglocale='pt_BR'),
+   other='EN', otherHref='../', otherLang='en', oglocale='pt_BR',
+   dl='Baixar CV', dlTitle='PDF em coluna única, formatado para sistemas de recrutamento (ATS)', pdf='Paulo-Vieira-Silva-Curriculo.pdf', page='A4',
+   atsSum='Resumo Profissional', atsExp='Experiência Profissional', atsEdu='Formação Acadêmica', atsAw='Prêmios', kw='Habilidades', earlier='Experiência anterior', cv='Currículo'),
 }
 L = UI[LANG]
 PREF = '' if LANG == 'en' else '../'
@@ -57,8 +61,8 @@ def month(iso):
     d = datetime.date.fromisoformat(iso + "-01")
     return f"{L['mon'][d.month-1]} {d.year}" if L['mon'] else d.strftime("%b %Y")
 
-def span(w):
-    return f"{month(w['startDate'])} – {month(w.get('endDate'))}"
+def span(w, sep=' – '):
+    return f"{month(w['startDate'])}{sep}{month(w.get('endDate'))}"
 
 def profile(net):
     return next(p for p in B["profiles"] if p["network"] == net)
@@ -132,12 +136,16 @@ def workmode(w):
     if tail in ("Remote", "On-site", "Hybrid"): return " \u00b7 ".join(place), tail
     return w["location"], None
 
-def role(w, i):
-    end = w.get("endDate")
+def where(w):
     place, mode = workmode(w)
     place = L['places'].get(place, place)
     if LANG == 'pt': place = place.replace('Brazil', 'Brasil').replace(' and ', ' e ')
-    etype = L['types'].get(w['type'], w['type']) + (f" &middot; {e(L['modes'].get(mode, mode))}" if mode else '')
+    return place, L['types'].get(w['type'], w['type']), L['modes'].get(mode, mode) if mode else None
+
+def role(w, i):
+    end = w.get("endDate")
+    place, etype, mode = where(w)
+    etype = e(etype) + (f" &middot; {e(mode)}" if mode else '')
     lgo = (ROOT / w["logo"]).read_text() if w.get("logo") else f'<span class="mono">{e(w["name"][0])}</span>'
     projs = [p for p in P if p.get("employer") == w["name"]] if i == next(k for k, x in enumerate(W) if x["name"] == w["name"]) else []
     pblock = f'<div class="nested"><p class="eyebrow">{L['projects']}</p><div class="minis">{"".join(project(p) for p in projs)}</div></div>' if projs else ''
@@ -179,6 +187,7 @@ INDEX = f'''<!doctype html>
 <link rel="alternate" type="text/markdown" href="{SITE}cv.md" title="CV as Markdown">
 <link rel="alternate" type="application/json" href="{SITE}resume.json" title="CV as JSON Resume">
 <link rel="alternate" type="text/plain" href="{SITE}llms.txt" title="llms.txt">
+<link rel="alternate" type="application/pdf" href="{CANON}{L['pdf']}" title="{L['dlTitle']}">
 <link rel="me" href="{e(li["url"])}"><link rel="me" href="{e(gh["url"])}">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="{e(B["name"])} · {e(B["label"])}">
@@ -297,6 +306,7 @@ INDEX = f'''<!doctype html>
   .links a.primary{{background:var(--btn);color:var(--btn-ink);border:1px solid transparent;transition:transform .4s var(--ease),background-color .5s}}
   .links a.primary:hover{{transform:translateY(-2px)}}
   .links a svg{{width:16px;height:16px;fill:currentColor}}
+  .links .aiw{{display:flex;gap:14px}}
   .links .ai{{color:var(--acc-t);padding:8px 6px;font-size:14px}}
   .links .ai::after{{content:"›";margin-left:5px;font-size:17px;line-height:0}}
 
@@ -452,6 +462,7 @@ INDEX = f'''<!doctype html>
       <a href="#about">{L['about']}</a><a href="#experience">{L['exp']}</a><a href="#skills">{L['skills'].split(' ')[0] if LANG == 'pt' else L['skills']}</a>
     </nav>
     <div class="navr">
+    <a class="langsw" href="{L['pdf']}" download type="application/pdf" title="{L['dlTitle']}" aria-label="{L['dl']} (PDF)">PDF</a>
     <a class="langsw" href="{L['otherHref']}" hreflang="{L['otherLang']}" lang="{L['otherLang']}">{L['other']}</a>
     <button id="theme" type="button" aria-label="{L['themeToDark']}" aria-pressed="false" title="{L['themeTitle']}">
       <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -469,8 +480,9 @@ INDEX = f'''<!doctype html>
       <a class="primary" href="{e(li["url"])}" rel="me noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.7-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.5V9h3.6v11.5z"/></svg>LinkedIn</a>
       <a class="glass lift" href="{e(gh["url"])}" rel="me noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>GitHub</a>
       <a class="glass lift" href="mailto:{e(B["email"])}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13zm2.3-.5 7.7 6.2L19.7 5H4.3zM20 7.1l-8 6.4-8-6.4V18.5c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5V7.1z"/></svg>Email</a>
-      <a class="ai" href="{PREF}cv.md" title="{L['mdTitle']}">cv.md</a>
-      <a class="ai" href="{PREF}resume.json" title="JSON Resume">resume.json</a>
+      <a class="glass lift" href="{L['pdf']}" download type="application/pdf" title="{L['dlTitle']}"><svg viewBox="0 0 24 24" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14"/></svg>{L['dl']}</a>
+      <span class="aiw"><a class="ai" href="{PREF}cv.md" title="{L['mdTitle']}">cv.md</a>
+      <a class="ai" href="{PREF}resume.json" title="JSON Resume">resume.json</a></span>
     </nav>
   </div>
 </header>
@@ -617,6 +629,7 @@ Current roles: {' · '.join(f"{w['position']} at {w['name']} (since {month(w['st
 - [Full CV (Markdown)]({SITE}cv.md): every role, achievement bullet and metric, plain text.
 - [JSON Resume]({SITE}resume.json): the same data in the jsonresume.org schema; the source of truth for this site.
 - [HTML page]({SITE}): human-facing version with schema.org Person JSON-LD.
+- [PDF]({SITE}{L['pdf']}): single-column, ATS-friendly PDF of the same CV ([Portuguese]({SITE}pt/{UI['pt']['pdf']})).
 
 ## Featured
 
@@ -633,12 +646,91 @@ Current roles: {' · '.join(f"{w['position']} at {w['name']} (since {month(w['st
 - Updated {UPDATED}. Numbers are from billing exports, invoices and ticket counts as of that date.
 """
 
+# ---------- ATS PDF: one column, real text, standard headings, no tables/images/header/footer ----------
+def ats_role(w):
+    place, etype, mode = where(w)
+    hl = "".join(f"<li>{e(x)}</li>" for x in w.get("highlights", []))
+    return f'''
+<h3>{e(w["position"])} | {e(w["name"])}</h3>
+<p class="meta">{e(" | ".join(x for x in (span(w, ' - '), place, mode, etype) if x))}</p>
+{f'<p>{e(w["summary"])}</p>' if w.get("summary") else ''}<ul>{hl}</ul>
+{f'<p class="kw"><b>{L["kw"]}:</b> {e(", ".join(w["keywords"]))}</p>' if w.get("keywords") else ''}'''
+
+def ats_proj(p):
+    hl = "".join(f"<li>{e(x)}</li>" for x in p.get("highlights", []))
+    url = f' | <a href="{e(p["url"])}">{e(bare(p["url"]))}</a>' if p.get("url") else ''
+    return f'''
+<h3>{e(p["name"])} | {e(", ".join(p.get("roles", [])))}{url}</h3>
+<p>{e(p["description"])}</p><ul>{hl}</ul>
+{f'<p class="kw"><b>{L["kw"]}:</b> {e(", ".join(p["keywords"]))}</p>' if p.get("keywords") else ''}'''
+
+OLD = f"{int(UPDATED[:4]) - 10}{UPDATED[4:7]}"  # roles that ended 10+ years ago (YYYY-MM) collapse to one line each
+bare = lambda u: u.split("://")[1].removeprefix("www.").rstrip("/")
+ATS = f'''<!doctype html>
+<html lang="{L['html']}"><head><meta charset="utf-8"><title>{e(B["name"])} | {L['cv']}</title>
+<style>
+@page{{size:{L['page']};margin:.4in .5in}}
+*{{margin:0;padding:0}}
+body{{font:9.5pt/1.25 Arial,Helvetica,sans-serif;color:#000;font-variant-ligatures:none;font-feature-settings:"liga" 0,"clig" 0}}
+a{{color:#000;text-decoration:none}}
+h1{{font-size:20pt;line-height:1.15}}
+.label{{font-size:11.5pt;font-weight:bold;margin:2pt 0 3pt}}
+h2{{font-size:10.5pt;text-transform:uppercase;letter-spacing:.04em;border-bottom:.75pt solid #000;padding-bottom:1.5pt;margin:7pt 0 3pt;break-after:avoid}}
+h3{{font-size:10pt;margin-top:4pt;break-after:avoid}}
+.meta{{break-after:avoid}}
+h2 + p,h3 + p{{margin-top:0}} p{{margin-top:2pt}}
+ul{{list-style:none;padding-left:11pt;margin-top:2pt}} li{{margin-top:.5pt;break-inside:avoid;text-indent:-8pt}} li::before{{content:"\u2022\u00a0\u00a0"}}
+</style></head><body>
+<h1>{e(B["name"])}</h1>
+<p class="label">{e(B["label"])}</p>
+<p>{e(B["location"]["city"])}, {e(B["location"]["region"])}, {L['country']} | {e(B["location"]["remote"])}</p>
+<p><a href="mailto:{e(B["email"])}">{e(B["email"])}</a> | <a href="{e(li["url"])}">{e(bare(li["url"]))}</a> | <a href="{e(gh["url"])}">{e(bare(gh["url"]))}</a> | <a href="{CANON}">{e(bare(CANON))}</a></p>
+<h2>{L['atsSum']}</h2>
+{about}
+<h2>{L['atsExp']}</h2>
+{"".join(ats_role(w) for w in W if w.get("endDate", "9") >= OLD)}
+<h3>{L['earlier']}</h3>
+{"".join(f'<p>{e(w["position"])} | {e(w["name"])} | {e(span(w, ' - '))}</p>' for w in W if w.get("endDate", "9") < OLD)}
+<h2>{L['projects']}</h2>
+{"".join(ats_proj(p) for p in P if not p.get("employer"))}
+<h2>{L['skills']}</h2>
+{"".join(f'<p><b>{e(g["name"])}:</b> {e(", ".join(g["keywords"]))}</p>' for g in S)}
+<h2>{L['atsEdu']}</h2>
+{"".join(f'<p><b>{e(x["studyType"])} {e(x["area"])}</b> | {e(x["institution"])}, {e(x["location"])} | {e(x["startDate"])} - {e(x["endDate"])}</p>' for x in ED)}
+<h2>{L['atsAw']}</h2>
+{"".join(f'<p><b>{e(x["title"])}</b> | {e(x["awarder"])} | {e(month(x["date"]))}</p><p>{e(x["summary"])}</p>' for x in AW)}
+<h2>{L['langs']}</h2>
+<p>{e(', '.join(f'{l["language"]} ({l["fluency"]})' for l in LG))}</p>
+</body></html>
+'''
+
+def pdf(doc, out):
+    chrome = os.environ.get("CHROME") or shutil.which("google-chrome") or shutil.which("chromium") or "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    if not os.path.exists(chrome):
+        print(f"skipped {out.name}: no Chrome found (set CHROME=/path/to/chrome)"); return
+    with tempfile.TemporaryDirectory() as t:
+        src, tmp = pathlib.Path(t) / "cv.html", pathlib.Path(t) / "cv.pdf"
+        src.write_text(doc)
+        proc = subprocess.Popen([chrome, "--headless", "--disable-gpu", "--no-pdf-header-footer", "--export-tagged-pdf",
+                                 "--no-first-run", f"--user-data-dir={t}/profile", f"--print-to-pdf={tmp}", src.as_uri()],
+                                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        # Chrome can linger long after writing the file (updater wake-up), so stop it once the PDF is complete.
+        end = time.time() + 120
+        while proc.poll() is None and time.time() < end and not (tmp.exists() and tmp.read_bytes().rstrip().endswith(b"%%EOF")):
+            time.sleep(.2)
+        proc.kill(); proc.wait()
+        if not (tmp.exists() and tmp.read_bytes().rstrip().endswith(b"%%EOF")): sys.exit(f"Chrome did not produce a complete {out.name}")
+        shutil.move(tmp, out)
+    print(f"built {out.relative_to(ROOT)}")
+
 if LANG == 'en':
     (ROOT / "index.html").write_text(INDEX)
     (ROOT / "cv.md").write_text(CV_MD)
     (ROOT / "llms.txt").write_text(LLMS)
     print("built index.html cv.md llms.txt")
+    pdf(ATS, ROOT / L['pdf'])
 else:
     (ROOT / "pt").mkdir(exist_ok=True)
     (ROOT / "pt" / "index.html").write_text(INDEX)
     print("built pt/index.html")
+    pdf(ATS, ROOT / "pt" / L['pdf'])
