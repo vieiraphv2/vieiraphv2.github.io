@@ -56,8 +56,7 @@ Multi-tenant file portal built in two days after a national retailer refused SFT
 
 ### Tibbis — https://tibbis.com.br
 Co-founder and CTO of a Brazilian marketplace for hiring local freelancers: PIX payment released when the job closes, identity verification with document OCR and face matching, real-time chat, disputes and ratings. Next.js, Supabase and Cloud Run, in production on Vercel.
-- 37 tables under row-level security, 217 automated tests, full security review with every finding closed
-- Automatic verification on Cloud Run: Google Vision OCR plus face matching, manual review after 3 failed attempts
+
 
 ## Experience
 

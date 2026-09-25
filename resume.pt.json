@@ -320,11 +320,7 @@
       "roles": [
         "CTO e cofundador"
       ],
-      "description": "Cofundador e CTO de um marketplace brasileiro para contratação de freelancers locais: pagamento por PIX liberado no fechamento do serviço, verificação de identidade com OCR de documento e comparação facial, chat em tempo real, disputas e avaliações. Next.js, Supabase e Cloud Run, em produção na Vercel.",
-      "highlights": [
-        "37 tabelas sob row-level security, 217 testes automatizados, revisão completa de segurança com todos os achados fechados",
-        "Verificação automática no Cloud Run: OCR do Google Vision e comparação facial, revisão manual após 3 tentativas"
-      ]
+      "description": "Cofundador e CTO de um marketplace brasileiro para contratação de freelancers locais: pagamento por PIX liberado no fechamento do serviço, verificação de identidade com OCR de documento e comparação facial, chat em tempo real, disputas e avaliações. Next.js, Supabase e Cloud Run, em produção na Vercel."
     }
   ],
   "skills": [

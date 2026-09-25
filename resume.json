@@ -468,10 +468,6 @@
         "PIX",
         "Vercel"
       ],
-      "highlights": [
-        "37 tables under row-level security, 217 automated tests, full security review with every finding closed",
-        "Automatic verification on Cloud Run: Google Vision OCR plus face matching, manual review after 3 failed attempts"
-      ],
       "employer": null
     }
   ],
