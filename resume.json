@@ -469,6 +469,26 @@
         "Vercel"
       ],
       "employer": null
+    },
+    {
+      "name": "Encontre um Terapeuta",
+      "description": "Therapist directory designed and built on WordPress with WooCommerce, Elementor and HivePress: location-based search, messages between patients and therapists, reviews, a blog, and online payments through Asaas (PIX, boleto and card) and Stripe. Another person manages the site today.",
+      "url": "https://encontreumterapeuta.com/",
+      "roles": [
+        "Designer and developer"
+      ],
+      "startDate": "2024",
+      "endDate": "2025",
+      "keywords": [
+        "WordPress",
+        "WooCommerce",
+        "Elementor",
+        "HivePress",
+        "Stripe",
+        "Asaas",
+        "PIX"
+      ],
+      "employer": null
     }
   ],
   "skills": [

@@ -58,6 +58,11 @@ Multi-tenant file portal built in two days after a national retailer refused SFT
 Co-founder and CTO of a Brazilian marketplace for hiring local freelancers: PIX payment released when the job closes, identity verification with document OCR and face matching, real-time chat, disputes and ratings. Next.js, Supabase and Cloud Run, in production on Vercel.
 
 
+### Encontre um Terapeuta — https://encontreumterapeuta.com/
+*2024 – 2025*
+Therapist directory designed and built on WordPress with WooCommerce, Elementor and HivePress: location-based search, messages between patients and therapists, reviews, a blog, and online payments through Asaas (PIX, boleto and card) and Stripe. Another person manages the site today.
+
+
 ## Experience
 
 ### DevOps Engineer · Smarter Sorting

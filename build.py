@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Render index.html, cv.md, llms.txt and the ATS PDF from resume.json. Stdlib only (PDF via headless Chrome): python3 build.py"""
-import json, html, datetime, pathlib, sys, os, shutil, subprocess, tempfile, time
+import json, html, datetime, pathlib, sys, os, re, shutil, subprocess, tempfile, time
 LANG = sys.argv[1] if len(sys.argv) > 1 else 'en'
 
 ROOT = pathlib.Path(__file__).parent
@@ -108,7 +108,7 @@ def project(p):
     ext = f'<p><a class="ext" href="{e(p["url"])}" rel="noopener">{L['open']} {e(p["name"])} <span aria-hidden="true">↗</span></a></p>' if p.get("url") else ''
     return f'''
 <details class="glass lift mini proj rise">
-  <summary><span class="val">{e(p["name"])}</span><span class="tag">{e(" · ".join(p.get("roles", [])))}</span></summary>
+  <summary><span class="val">{e(p["name"])}</span><span class="tag">{e(" · ".join(p.get("roles", []) + ([p["startDate"] + " – " + p["endDate"]] if p.get("startDate") else [])))}</span></summary>
   <div class="body">
     <p>{e(p["description"])}</p>
     {f'<ul class="hl">{hl}</ul>' if hl else ''}
@@ -592,7 +592,7 @@ Email: {B['email']} · LinkedIn: {li['url']} · GitHub: {gh['url']} · Web: {SIT
 
 ## Selected work
 
-{chr(10).join(f"### {p['name']}{' — ' + p['url'] if p.get('url') else ''}{chr(10)}{p['description']}{chr(10)}{chr(10).join('- ' + x for x in p.get('highlights', []))}{chr(10)}" for p in P)}
+{chr(10).join(f"### {p['name']}{' — ' + p['url'] if p.get('url') else ''}{chr(10)}{'*' + p['startDate'] + ' – ' + p['endDate'] + '*' + chr(10) if p.get('startDate') else ''}{p['description']}{chr(10)}{chr(10).join('- ' + x for x in p.get('highlights', []))}{chr(10)}" for p in P)}
 ## Experience
 
 {chr(10).join(md_role(w) for w in W)}
@@ -647,6 +647,11 @@ Current roles: {' · '.join(f"{w['position']} at {w['name']} (since {month(w['st
 """
 
 # ---------- ATS PDF: one column, real text, standard headings, no tables/images/header/footer ----------
+def kwline(x, *texts):
+    said = " ".join(texts).lower()
+    ks = [k for k in x.get("keywords", []) if not re.search(rf"(?<!\w){re.escape(k.lower())}(?!\w)", said)]
+    return f'<p class="kw"><b>{L["kw"]}:</b> {e(", ".join(ks))}</p>' if ks else ''
+
 def ats_role(w):
     place, etype, mode = where(w)
     hl = "".join(f"<li>{e(x)}</li>" for x in w.get("highlights", []))
@@ -654,15 +659,15 @@ def ats_role(w):
 <h3>{e(w["position"])} | {e(w["name"])}</h3>
 <p class="meta">{e(" | ".join(x for x in (span(w, ' - '), place, mode, etype) if x))}</p>
 {f'<p>{e(w["summary"])}</p>' if w.get("summary") else ''}<ul>{hl}</ul>
-{f'<p class="kw"><b>{L["kw"]}:</b> {e(", ".join(w["keywords"]))}</p>' if w.get("keywords") else ''}'''
+{kwline(w, w.get("summary", ""), *w.get("highlights", []))}'''
 
 def ats_proj(p):
     hl = "".join(f"<li>{e(x)}</li>" for x in p.get("highlights", []))
     url = f' | <a href="{e(p["url"])}">{e(bare(p["url"]))}</a>' if p.get("url") else ''
     return f'''
-<h3>{e(p["name"])} | {e(", ".join(p.get("roles", [])))}{url}</h3>
+<h3>{e(p["name"])} | {e(", ".join(p.get("roles", [])))}{" | " + e(p["startDate"] + " - " + p["endDate"]) if p.get("startDate") else ""}{url}</h3>
 <p>{e(p["description"])}</p><ul>{hl}</ul>
-{f'<p class="kw"><b>{L["kw"]}:</b> {e(", ".join(p["keywords"]))}</p>' if p.get("keywords") else ''}'''
+{kwline(p, p["description"], *p.get("highlights", []))}'''
 
 OLD = f"{int(UPDATED[:4]) - 10}{UPDATED[4:7]}"  # roles that ended 10+ years ago (YYYY-MM) collapse to one line each
 bare = lambda u: u.split("://")[1].removeprefix("www.").rstrip("/")

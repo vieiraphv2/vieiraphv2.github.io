@@ -321,6 +321,12 @@
         "CTO e cofundador"
       ],
       "description": "Cofundador e CTO de um marketplace brasileiro para contratação de freelancers locais: pagamento por PIX liberado no fechamento do serviço, verificação de identidade com OCR de documento e comparação facial, chat em tempo real, disputas e avaliações. Next.js, Supabase e Cloud Run, em produção na Vercel."
+    },
+    {
+      "roles": [
+        "Designer e desenvolvedor"
+      ],
+      "description": "Design e desenvolvimento de um diretório de terapeutas em WordPress, com WooCommerce, Elementor e HivePress: busca por localização, mensagens entre pacientes e terapeutas, avaliações, blog e pagamentos online via Asaas (PIX, boleto e cartão) e Stripe. Hoje outra pessoa cuida do site."
     }
   ],
   "skills": [
