@@ -95,7 +95,7 @@ IT lead for an AI data company with a corporate team and an external expert work
 - Automated onboarding and offboarding with a Slack app connecting Ashby, Rippling, Linear and other platforms: hiring and termination events open linked IT tickets and notify the right channels without manual entry.
 - Took over Apple Business Manager administration and reconnected it to Rippling MDM, so new company Macs enroll in device management automatically.
 - Wrote the security improvement plan covering SOC 2, device management, policies and security awareness training, and provided the IT input for customer security reviews.
-- Set up IT request and project tracking in Linear, with work classified by sensitivity ahead of sharing it with Engineering.
+- Set up IT request and project tracking in Linear.
 - Handled the day-to-day queue: around 90 access, account, mailbox and device requests across Google Workspace, Slack, Bitwarden, Zendesk, Dropbox, Coda, Linear and other platforms.
 
 Keywords: Google Workspace, GAM, Google Apps Script, Slack, Rippling, Apple Business Manager, MDM, Ashby, Linear, Zendesk, Bitwarden, SOC 2, MFA, IAM, Identity lifecycle, Automation, AI agents, Vendor management
