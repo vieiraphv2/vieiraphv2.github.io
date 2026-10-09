@@ -1,7 +1,7 @@
 {
   "basics": {
     "label": "Engenheiro DevOps & Plataforma | Operações de TI",
-    "tagline": "Paulo Vieira Silva é Engenheiro DevOps e de Plataforma, responsável pelo Google Cloud, pela plataforma de dados e pelos produtos internos da Smarter Sorting, e Consultor de TI na Pareto AI. Mais de $600 mil/ano em economias de nuvem entregues; 1,4 TB migrados sem downtime.",
+    "tagline": "Paulo Vieira Silva é Engenheiro DevOps e de Plataforma, responsável pelo Google Cloud, pela plataforma de dados e pelos produtos internos da Smarter Sorting. Mais de $600 mil/ano em economias de nuvem entregues; 1,4 TB migrados sem downtime.",
     "summary": "Engenheiro DevOps e de plataforma com mais de 10 anos em TI.\n\nMinha força é descobrir o que está realmente acontecendo e resolver o problema, independentemente de área, ferramenta, complexidade ou tamanho da tarefa.\n\nEssa amplitude vem de uma carreira que cobre toda a extensão da operação de tecnologia, de NOC para mineração global e suporte a ERP até identidade, segurança, infraestrutura de nuvem, plataformas de dados e engenharia de produtos internos.\n\nOs últimos doze meses, em números:\n- Mais de $600 mil/ano em economias de nuvem identificadas e entregues, usando IA para construir ferramentas, sistemas e processos internos.\n- Migração de Snowflake para BigQuery: 1,4 TB em 33 bancos de dados, sem interrupção de serviço e com custo de computação ~35% menor; 30+ relatórios Tableau com 4.000+ SQLs específicos de Snowflake migrados.\n- Salesforce Cases substituído por uma plataforma de suporte construída em 13 dias, hoje com 65.003 tickets migrados.\n- Conta do Kubernetes de produção cortada em dois terços, com zero incidentes.\n\nO que os números não mostram: eu documento o que construo, ensino as ferramentas a quem precisar e deixo cada sistema mais fácil de operar do que encontrei. O crescimento do time ao meu redor faz parte da entrega.",
     "location": {
       "remote": "Remoto, horário dos EUA"
@@ -48,26 +48,32 @@
     },
     {
       "position": "Consultor de TI",
-      "summary": "Contrato de consultoria em paralelo à Smarter Sorting: construindo a função de TI de uma empresa de IA com mais de 150 pessoas, de identidade e gestão de dispositivos a preparação para SOC 2.",
+      "summary": "Líder de TI de uma empresa de dados para IA, com equipe corporativa e cerca de 1.000 contas de especialistas externos distribuídas em sete tenants do Google Workspace. Respondia à liderança de People e cuidava da TI de ponta a ponta: segurança, identidade, dispositivos, fornecedores e suporte.",
       "highlights": [
-        "Liderei a ativação de MFA em toda a empresa no Google Workspace para 1.000+ contas (experts externos, funcionários e contratados), em três ondas para limitar disrupção.",
-        "Construí uma ferramenta self-service /mfa-unblock no Slack que entrega códigos de backup do Google no e-mail de recuperação, cortando a carga dos times de Suporte e Trust sem enfraquecer a verificação de identidade.",
-        "Conduzi a preparação para auditoria SOC 2: planilha de controles e mapeamento de controles técnicos com a Engenharia; assessorei sobre impacto de FedRAMP e residência de dados em mudanças de infraestrutura do Slack.",
-        "Dono do provisionamento e desprovisionamento em Google Workspace, Slack, Zendesk e outros sistemas para funcionários, contratados e híbridos; automatizei o fluxo Ashby para ticket de TI para Slack em novas contratações e tickets de offboarding a partir de desligamentos no Rippling.",
-        "Autor e condutor do rollout de MDM para colocar todo dispositivo corporativo sob gestão central; avaliei implicações de segurança de dispositivos de contratados que tocam plataformas de clientes.",
-        "Auditei o licenciamento do Slack e revelei ~100 assentos pagos ociosos; defini o modelo de convidados para híbridos e compilei o inventário de fornecedores que faltava ao time de compras."
+        "Assessorei a liderança e os times de People, Jurídico, Compras, Suporte, Trust and Safety e DevOps nas decisões de TI, escrevendo as análises de opções e custos por trás de gestão de endpoints, compra de laptops, MDM e SSO; orientei sobre escopo do SOC 2, licenciamento de ferramentas de IA para programação, monitoramento de funcionários, controles de compartilhamento de dados e o padrão de acesso para quem trabalha em regime híbrido.",
+        "Comecei com uma auditoria inicial de segurança do Google Workspace e do Slack e transformei os achados no roadmap de TI: 76 ações acompanhadas e um checklist de 32 itens de prontidão para due diligence.",
+        "Implementei a verificação em duas etapas no tenant corporativo do Google Workspace e em seis tenants externos, 1.000+ contas em três ondas escalonadas, coordenando o rollout entre os times; construí uma ferramenta no Slack, um runbook de suporte e um processo de recuperação de conta com verificação de identidade para restabelecer com segurança o acesso de usuários externos bloqueados.",
+        "Automatizei onboarding e offboarding com um app do Slack conectando Ashby, Rippling, Linear e outras plataformas: eventos de contratação e desligamento abrem tickets de TI vinculados e notificam os canais certos, sem preenchimento manual.",
+        "Assumi a administração do Apple Business Manager e o reconectei ao MDM do Rippling, para que novos Macs da empresa entrem na gestão de dispositivos automaticamente.",
+        "Escrevi o plano de melhoria de segurança cobrindo SOC 2, gestão de dispositivos, políticas e treinamento de conscientização em segurança, e forneci as informações de TI para as revisões de segurança feitas por clientes.",
+        "Estruturei o acompanhamento de solicitações e projetos de TI no Linear, com o trabalho classificado por sensibilidade antes de compartilhar com a Engenharia.",
+        "Atendi a demanda do dia a dia: cerca de 90 solicitações de acesso, conta, caixa de e-mail e dispositivo em Google Workspace, Slack, Bitwarden, Zendesk, Dropbox, Coda, Linear e outras plataformas."
       ],
       "keywords": [
         "Google Workspace",
         "GAM",
+        "Google Apps Script",
         "Slack",
         "Rippling",
+        "Apple Business Manager",
+        "MDM",
         "Ashby",
+        "Linear",
         "Zendesk",
         "Bitwarden",
         "SOC 2",
         "MFA",
-        "MDM",
+        "IAM",
         "Ciclo de vida de identidade",
         "Automação",
         "Agentes de IA",

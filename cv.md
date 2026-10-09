@@ -4,7 +4,7 @@
 Vila Velha, Espírito Santo, Brazil · Remote, US hours · he/him
 Email: paulo_sng@hotmail.com · LinkedIn: https://www.linkedin.com/in/paulo-vieira-phv/ · GitHub: https://github.com/vieiraphv2 · Web: https://vieiraphv2.github.io/
 
-> Paulo Vieira Silva is a DevOps & Platform Engineer running Google Cloud, the data platform and internal products at Smarter Sorting, and IT for Pareto AI on a consulting contract. $600k/year in cloud savings delivered; 1.4 TB migrated with zero downtime.
+> Paulo Vieira Silva is a DevOps & Platform Engineer running Google Cloud, the data platform and internal products at Smarter Sorting. $600k/year in cloud savings delivered; 1.4 TB migrated with zero downtime.
 
 ## Highlights
 
@@ -85,18 +85,20 @@ Own cloud infrastructure, the data platform and internal products at a complianc
 Keywords: Google Cloud Platform, BigQuery, Snowflake, SQL, GKE, Kubernetes, Terraform, Cloud Run, Cloud SQL, Datastream, Python, TypeScript, Tableau, FinOps, Workload Identity Federation, CI/CD, Disaster recovery, Incident response, AI agents
 
 ### IT Consultant · Pareto AI
-*Apr 2026 – Present · Contract · Remote*
+*Apr 2026 – Oct 2026 · Contract · Remote*
 
-Consulting contract alongside Smarter Sorting: building the IT function for a 150+ person AI company, from identity and device management to SOC 2 readiness.
+IT lead for an AI data company with a corporate team and an external expert workforce of about 1,000 accounts across seven Google Workspace tenants. Reported to the Head of People and owned IT end to end: security, identity, devices, vendors and support.
 
-- Led company-wide MFA enforcement across Google Workspace for 1,000+ accounts (external experts, employees and contractors), rolled out in three phased waves to limit disruption.
-- Built a self-service /mfa-unblock Slack tool that delivers Google backup codes to users' recovery emails, cutting Support and Trust workload while keeping identity verification intact.
-- Drove SOC 2 audit readiness: controls-tracking workbook and mapping of technical controls to audit criteria with Engineering; advised on FedRAMP and data-residency impact of Slack infrastructure changes.
-- Own provisioning and deprovisioning across Google Workspace, Slack, Zendesk and other systems for employees, contractors and hybrid workers; automated the Ashby to IT ticket to Slack pipeline for new hires and offboarding tickets from Rippling terminations.
-- Authoring and driving the MDM rollout to bring every company-issued device under central management; assessed data-security implications of contractor devices touching client platforms.
-- Audited Slack licensing and surfaced ~100 idle paid seats; defined the guest model for hybrid workers and compiled the company-wide vendor inventory the procurement team was missing.
+- Advised leadership and the People, Legal, Procurement, Support, Trust and Safety and DevOps teams on IT decisions, writing the options and cost analyses behind endpoint management, laptop sourcing, MDM and SSO; advised on SOC 2 scope, AI coding tool licensing, employee monitoring, data sharing controls and the access standard for hybrid workers.
+- Started with a baseline security audit of Google Workspace and Slack and turned the findings into the IT roadmap: 76 tracked actions and a 32-point due-diligence readiness checklist.
+- Implemented 2-step verification on the corporate Google Workspace tenant and six external tenants, 1,000+ accounts in three phased waves, coordinating the rollout across teams; built a Slack tool, a support runbook and an identity-verified account recovery process so locked-out external users could be unblocked securely.
+- Automated onboarding and offboarding with a Slack app connecting Ashby, Rippling, Linear and other platforms: hiring and termination events open linked IT tickets and notify the right channels without manual entry.
+- Took over Apple Business Manager administration and reconnected it to Rippling MDM, so new company Macs enroll in device management automatically.
+- Wrote the security improvement plan covering SOC 2, device management, policies and security awareness training, and provided the IT input for customer security reviews.
+- Set up IT request and project tracking in Linear, with work classified by sensitivity ahead of sharing it with Engineering.
+- Handled the day-to-day queue: around 90 access, account, mailbox and device requests across Google Workspace, Slack, Bitwarden, Zendesk, Dropbox, Coda, Linear and other platforms.
 
-Keywords: Google Workspace, GAM, Slack, Rippling, Ashby, Zendesk, Bitwarden, SOC 2, MFA, MDM, Identity lifecycle, Automation, AI agents, Vendor management
+Keywords: Google Workspace, GAM, Google Apps Script, Slack, Rippling, Apple Business Manager, MDM, Ashby, Linear, Zendesk, Bitwarden, SOC 2, MFA, IAM, Identity lifecycle, Automation, AI agents, Vendor management
 
 ### IT Operations Specialist · Smarter Sorting
 *Jan 2024 – Jan 2025 · Full-time · Boulder, Colorado, US · Remote*
@@ -234,4 +236,4 @@ Keywords: Field support, CCTV, Hardware maintenance
 - Spanish: Basic
 
 ---
-Canonical: https://vieiraphv2.github.io/ · JSON Resume: https://vieiraphv2.github.io/resume.json · Updated 2026-09-18
+Canonical: https://vieiraphv2.github.io/ · JSON Resume: https://vieiraphv2.github.io/resume.json · Updated 2026-10-09
