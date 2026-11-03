@@ -674,14 +674,14 @@ bare = lambda u: u.split("://")[1].removeprefix("www.").rstrip("/")
 ATS = f'''<!doctype html>
 <html lang="{L['html']}"><head><meta charset="utf-8"><title>{e(B["name"])} | {L['cv']}</title>
 <style>
-@page{{size:{L['page']};margin:.35in .5in}}
+@page{{size:{L['page']};margin:.3in .5in}}
 *{{margin:0;padding:0}}
 body{{font:9.5pt/1.2 Arial,Helvetica,sans-serif;color:#000;font-variant-ligatures:none;font-feature-settings:"liga" 0,"clig" 0}}
 a{{color:#000;text-decoration:none}}
 h1{{font-size:20pt;line-height:1.15}}
 .label{{font-size:11.5pt;font-weight:bold;margin:2pt 0 3pt}}
-h2{{font-size:10.5pt;text-transform:uppercase;letter-spacing:.04em;border-bottom:.75pt solid #000;padding-bottom:1.5pt;margin:6pt 0 3pt;break-after:avoid}}
-h3{{font-size:10pt;margin-top:3.5pt;break-after:avoid}}
+h2{{font-size:10.5pt;text-transform:uppercase;letter-spacing:.04em;border-bottom:.75pt solid #000;padding-bottom:1.5pt;margin:5pt 0 3pt;break-after:avoid}}
+h3{{font-size:10pt;margin-top:3pt;break-after:avoid}}
 .meta{{break-after:avoid}}
 h2 + p,h3 + p{{margin-top:0}} p{{margin-top:2pt}}
 ul{{list-style:none;padding-left:11pt;margin-top:2pt}} li{{margin-top:.5pt;break-inside:avoid;text-indent:-8pt}} li::before{{content:"\u2022\u00a0\u00a0"}}
