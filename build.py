@@ -674,9 +674,9 @@ bare = lambda u: u.split("://")[1].removeprefix("www.").rstrip("/")
 ATS = f'''<!doctype html>
 <html lang="{L['html']}"><head><meta charset="utf-8"><title>{e(B["name"])} | {L['cv']}</title>
 <style>
-@page{{size:{L['page']};margin:.4in .5in}}
+@page{{size:{L['page']};margin:.35in .5in}}
 *{{margin:0;padding:0}}
-body{{font:9.5pt/1.22 Arial,Helvetica,sans-serif;color:#000;font-variant-ligatures:none;font-feature-settings:"liga" 0,"clig" 0}}
+body{{font:9.5pt/1.2 Arial,Helvetica,sans-serif;color:#000;font-variant-ligatures:none;font-feature-settings:"liga" 0,"clig" 0}}
 a{{color:#000;text-decoration:none}}
 h1{{font-size:20pt;line-height:1.15}}
 .label{{font-size:11.5pt;font-weight:bold;margin:2pt 0 3pt}}
@@ -713,7 +713,7 @@ def pdf(doc, out):
     chrome = os.environ.get("CHROME") or shutil.which("google-chrome") or shutil.which("chromium") or "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
     if not os.path.exists(chrome):
         print(f"skipped {out.name}: no Chrome found (set CHROME=/path/to/chrome)"); return
-    with tempfile.TemporaryDirectory() as t:
+    with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as t:
         src, tmp = pathlib.Path(t) / "cv.html", pathlib.Path(t) / "cv.pdf"
         src.write_text(doc)
         proc = subprocess.Popen([chrome, "--headless", "--disable-gpu", "--no-pdf-header-footer", "--export-tagged-pdf",

@@ -31,7 +31,7 @@
 <script type="application/ld+json">{
  "@context": "https://schema.org",
  "@type": "ProfilePage",
- "dateModified": "2026-10-09",
+ "dateModified": "2026-11-03",
  "inLanguage": "pt-BR",
  "mainEntity": {
   "@type": "Person",
@@ -575,13 +575,13 @@
     <span class="who">
       <span class="ttl"><span class="pos">Engenheiro DevOps</span> <span class="at">na</span> <span class="org"><a href="https://www.smartersorting.com/" rel="noopener">Smarter Sorting</a></span></span>
       <span class="rsub">Responsável pela infraestrutura de nuvem, pela plataforma de dados e pelos produtos internos de uma SaaS de IA para compliance, como único engenheiro de plataforma.</span>
-      <span class="chips"><span>Google Cloud Platform</span><span>BigQuery</span><span>Snowflake</span><span>SQL</span><span>GKE</span><span>Kubernetes</span><span>Terraform</span><span>Cloud Run</span><span>Cloud SQL</span><span>Datastream</span><span>Python</span><span>TypeScript</span><span>Tableau</span><span>FinOps</span><span>Workload Identity Federation</span><span>CI/CD</span><span>Recuperação de desastres</span><span>Resposta a incidentes</span><span>Agentes de IA</span></span>
+      <span class="chips"><span>Google Cloud Platform</span><span>BigQuery</span><span>Snowflake</span><span>SQL</span><span>GKE</span><span>Kubernetes</span><span>Elasticsearch</span><span>Terraform</span><span>Cloud Run</span><span>Cloud SQL</span><span>Datastream</span><span>Python</span><span>TypeScript</span><span>Tableau</span><span>FinOps</span><span>Workload Identity Federation</span><span>CI/CD</span><span>Recuperação de desastres</span><span>Resposta a incidentes</span><span>Agentes de IA</span></span>
     </span>
     <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
   </summary>
   <div class="rbody">
     <p class="loc">Boulder, Colorado, EUA</p>
-    <ul class="hl"><li>Liderei a migração de Snowflake para BigQuery como seu único engenheiro, coordenando o cutover com cada time dono de dados: 1,4 TB em 33 bancos e 30+ relatórios Tableau de clientes (4.000+ SQLs específicos de Snowflake), zero downtime e custo de computação ~35% menor. Rastreei anos de dados silenciosamente errados até o pipeline de ingestão legado e corrigi.</li><li>Construí o ferramental que tornou a migração possível: um tradutor de SQL Snowflake para BigQuery ciente de schema, um conversor de workbooks Tableau em um clique e um navegador de schemas cobrindo 5.400+ tabelas.</li><li>Construí a plataforma de suporte que substituiu o Salesforce Cases em 13 dias: e-mail virando ticket, central de ajuda pública, base de conhecimento, RBAC e anexos. 65.003 tickets e 145.464 mensagens migrados, no ar antes do desligamento do Salesforce.</li><li>Liderei o programa de custos do Google Cloud, identificando e entregando mais de $600 mil/ano em economias. Diagnostiquei uma má configuração de BigQuery custando ~$38.000/mês e validei a correção contra o billing export (redução de 98,4%).</li><li>Cortei os dois clusters GKE de $19.574/mês: right-sizing de dezenas de serviços, 38 serviços mortos desligados com aval dos donos, 9 dos 18 nós de produção drenados um por vez, staging movido para Spot em AMD e fechamento com contrato de uso comprometido de um ano, tudo sem downtime nem incidentes. Conta de produção reduzida em dois terços; ~$160 mil/ano economizados.</li><li>Substituí replicação de dados de terceiros por pipelines internos: um ETL em Python no Cloud Run sincronizando 196 objetos do Salesforce diariamente, ingestão da API do Stripe no BigQuery e change data capture com Datastream em quatro ambientes.</li><li>Entreguei um portal multi-tenant de arquivos com API REST pública (construído em dois dias depois que um varejista recusou SFTP, Dropbox e Drive) e um serviço de acesso somente leitura a bancos de dados sem distribuir credenciais.</li><li>Rastreei meses de falhas nos testes de restore até 5,5 TB de WAL retidos por dois replication slots mortos, completei o primeiro restore bem-sucedido (407 GB) e lancei point-in-time recovery, testes de restore automatizados e alertas de WAL em toda instância de produção.</li><li>Substituí a revisão quinzenal manual de logs de segurança por um job no Cloud Run que analisa logs de Cloud Armor, firewall, bancos e Auth0 e abre os próprios tickets no Jira.</li><li>Resolvi incidentes de dados em produção para varejistas enterprise: restaurei um dashboard crítico de negócio em 5 horas; corrigi dados de materiais perigosos que alimentavam a logística de um varejista nacional.</li><li>Escrevi o padrão da empresa para acesso programático de IA, substituindo chaves de API estáticas por Workload Identity Federation. Adicionei revisão automática por IA de builds de CI que falham.</li></ul>
+    <ul class="hl"><li>Migrei o data warehouse da empresa do Snowflake para o BigQuery sem downtime e com ~35% menos custo de computação, como único engenheiro do projeto: 1,4 TB em 33 bancos e 30+ relatórios Tableau voltados a clientes (4.000+ queries específicas do Snowflake migradas), com o cutover coordenado com cada time dono de dados. No caminho, encontrei e corrigi anos de dados silenciosamente errados no pipeline de ingestão legado.</li><li>Converti um dashboard executivo de cliente no Tableau em cerca de 15 minutos com o ferramental de migração que construí: um tradutor de SQL que entende o schema, um conversor de workbooks em um clique e um navegador de schemas sobre 5.400 tabelas.</li><li>Substituí o Salesforce Cases por uma plataforma de suporte própria, construída em 13 dias e no ar oito dias antes do desligamento do Salesforce: abertura de tickets por e-mail, central de ajuda pública, base de conhecimento, acesso por papéis e anexos, com 65.003 tickets e 145.464 mensagens migrados.</li><li>Identifiquei e entreguei mais de $600 mil/ano em economia no Google Cloud, entre BigQuery, GKE, Cloud SQL e contratos de fornecedores, incluindo uma configuração errada no BigQuery que custava ~$38 mil/mês, corrigida e verificada no billing export (redução de 98,4%).</li><li>Reduzi o custo dos dois clusters GKE, que partiam de $19.574/mês, em ~$160 mil/ano, com a conta de produção dois terços menor e sem downtime nem incidentes: right-sizing de dezenas de serviços, 38 serviços mortos desligados com aval dos donos, nós de produção reduzidos pela metade (de 18 para 9) um por vez, staging em capacidade Spot e fechamento com um contrato de uso comprometido de um ano.</li><li>Projetei, construí e validei uma plataforma Elasticsearch própria no GKE para substituir um contrato gerenciado de $240 mil/ano por uma projeção de $20 mil/ano: cluster regional com infraestrutura como código, SSO, snapshots e alertas, replicado dos quatro deployments ativos do Elastic Cloud (1,3 TB). Aceita pelos donos dos dados depois que 1.055 queries reexecutadas bateram com o serviço pago na busca por texto; a quantização vetorial deixou um índice de embeddings 40x mais rápido em um terço do disco. O cutover de produção ainda está por vir.</li><li>Substituí a replicação de dados de terceiros por pipelines próprios: um ETL em Python no Cloud Run sincronizando 196 objetos do Salesforce por dia, ingestão do Stripe no BigQuery e change data capture (CDC) via Datastream de quatro ambientes de banco de dados.</li><li>Construí em dois dias um portal de arquivos multi-tenant com API pública, depois que um varejista nacional recusou SFTP, Dropbox e Drive (10.000 chamadas de API em uma única execução de cliente), e um serviço de acesso somente leitura a bancos de dados que concede acesso sem distribuir credenciais.</li><li>Corrigi meses de testes de restore de produção que falhavam: rastreei a causa até 5,5 TB de write-ahead logs presos por dois slots de replicação mortos, concluí o primeiro restore bem-sucedido (407 GB) e coloquei recuperação point-in-time, testes de restore automáticos e alertas de WAL em toda instância de produção.</li><li>Automatizei a revisão quinzenal de logs de segurança com um job no Cloud Run que lê os logs do Cloud Armor, firewall, bancos de dados e Auth0 e abre os próprios tickets no Jira.</li><li>Resolvi incidentes de dados em produção para clientes enterprise do varejo, incluindo um dashboard crítico de relatórios restaurado em 5 horas e dados de materiais perigosos corrigidos no feed logístico de um varejista nacional.</li><li>Escrevi o padrão da empresa para acesso programático a IA, substituindo chaves de API estáticas por Workload Identity Federation, e adicionei revisão automática por IA de builds de CI que falham.</li></ul>
     <div class="nested"><p class="eyebrow">Projetos</p><div class="minis">
 <details class="glass lift mini proj rise">
   <summary><span class="val">GKE Cost Reduction</span><span class="tag">Engenheiro líder</span></summary>
@@ -590,6 +590,15 @@
     <ul class="hl"><li>38 serviços mortos desligados, cada um com aval do dono e caminho de volta documentado</li><li>18 máquinas de produção reduzidas a 9, drenadas uma por vez</li><li>Staging em capacidade Spot preemptível com AMD: ~$83 mil/ano</li></ul>
     <ul class="chips"><li>GKE</li><li>FinOps</li><li>Kubernetes</li><li>Spot</li><li>AMD</li><li>Committed use discounts</li></ul>
     <p><a class="ext" href="https://vieiraphv2.github.io/gke-cost-reduction/" rel="noopener">Abrir GKE Cost Reduction <span aria-hidden="true">↗</span></a></p>
+  </div>
+</details>
+<details class="glass lift mini proj rise">
+  <summary><span class="val">Search Platform</span><span class="tag">Engenheiro líder</span></summary>
+  <div class="body">
+    <p>Um cluster Elasticsearch próprio no GKE, construído para substituir o contrato gerenciado do Elastic Cloud (cerca de $240 mil/ano) por uma projeção de $20 mil/ano. O Terraform o constrói, o Okta autentica os usuários, o Cloud Armor fica na frente, e snapshots diários e de hora em hora e alertas o protegem, em um projeto GCP próprio. Guarda 1,3 TB replicados dos quatro deployments ativos do Elastic Cloud. Validado contra o serviço pago e aceito pelos donos dos dados; nenhuma aplicação de produção migrou ainda.</p>
+    <ul class="hl"><li>1.055 queries reais reexecutadas nos dois clusters: resultados por texto idênticos, e o primeiro resultado vetorial bateu em 90 de 100 buscas vetoriais; do laptop de um usuário, 134 ms de ponta a ponta contra 270 ms no serviço pago</li><li>Comprimi os vetores de um índice de busca: disco de 70,9 GB para 22,2 GB, memória de vetores de 17,3 GB para 0,6 GB e tempo mediano de query de 3,9 s para 88 ms, ainda encontrando 98% ou mais dos resultados corretos</li><li>Movi o cluster para outra região e apaguei o antigo via Terraform, com cada plan alterando exatamente o número de recursos aprovado antes</li></ul>
+    <ul class="chips"><li>Elasticsearch</li><li>GKE</li><li>ECK</li><li>Terraform</li><li>Workload Identity Federation</li><li>Okta</li><li>Cloud Armor</li><li>Busca vetorial</li></ul>
+    
   </div>
 </details>
 <details class="glass lift mini proj rise">
@@ -634,7 +643,7 @@
   </summary>
   <div class="rbody">
     
-    <ul class="hl"><li>Assessorei a liderança e os times de People, Jurídico, Compras, Suporte, Trust and Safety e DevOps nas decisões de TI, escrevendo as análises de opções e custos por trás de gestão de endpoints, compra de laptops, MDM e SSO; orientei sobre escopo do SOC 2, licenciamento de ferramentas de IA para programação, monitoramento de funcionários, controles de compartilhamento de dados e o padrão de acesso para quem trabalha em regime híbrido.</li><li>Comecei com uma auditoria inicial de segurança do Google Workspace e do Slack e transformei os achados no roadmap de TI: 76 ações acompanhadas e um checklist de 32 itens de prontidão para due diligence.</li><li>Implementei a verificação em duas etapas no tenant corporativo do Google Workspace e em seis tenants externos, 1.000+ contas em três ondas escalonadas, coordenando o rollout entre os times; construí uma ferramenta no Slack, um runbook de suporte e um processo de recuperação de conta com verificação de identidade para restabelecer com segurança o acesso de usuários externos bloqueados.</li><li>Automatizei onboarding e offboarding com um app do Slack conectando Ashby, Rippling, Linear e outras plataformas: eventos de contratação e desligamento abrem tickets de TI vinculados e notificam os canais certos, sem preenchimento manual.</li><li>Assumi a administração do Apple Business Manager e o reconectei ao MDM do Rippling, para que novos Macs da empresa entrem na gestão de dispositivos automaticamente.</li><li>Escrevi o plano de melhoria de segurança cobrindo SOC 2, gestão de dispositivos, políticas e treinamento de conscientização em segurança, e forneci as informações de TI para as revisões de segurança feitas por clientes.</li><li>Estruturei o acompanhamento de solicitações e projetos de TI no Linear.</li><li>Atendi a demanda do dia a dia: cerca de 90 solicitações de acesso, conta, caixa de e-mail e dispositivo em Google Workspace, Slack, Bitwarden, Zendesk, Dropbox, Coda, Linear e outras plataformas.</li></ul>
+    <ul class="hl"><li>Dei à liderança e a seis times (People, Jurídico, Compras, Suporte, Trust and Safety, DevOps) as análises de opções e custos por trás de gestão de endpoints, compra de laptops, MDM e SSO, e orientei sobre escopo do SOC 2, licenciamento de ferramentas de IA para programação, monitoramento de funcionários, controles de compartilhamento de dados e o padrão de acesso para quem trabalha em regime híbrido.</li><li>Transformei uma auditoria inicial de segurança do Google Workspace e do Slack no roadmap de TI da empresa: 76 ações acompanhadas e um checklist de 32 itens de prontidão para due diligence.</li><li>Coloquei 1.000+ contas em sete tenants do Google Workspace sob verificação em duas etapas, em três ondas escalonadas e coordenadas entre os times, com uma ferramenta no Slack, um runbook de suporte e um processo de recuperação com verificação de identidade que desbloqueou usuários externos com segurança.</li><li>Automatizei onboarding e offboarding com um app do Slack conectado a Ashby, Rippling e Linear: eventos de contratação e desligamento abrem tickets de TI vinculados e notificam os canais certos, sem preenchimento manual.</li><li>Coloquei os novos Macs da empresa sob gestão de dispositivos automaticamente ao assumir o Apple Business Manager e reconectá-lo ao MDM.</li><li>Escrevi o plano de melhoria de segurança (SOC 2, gestão de dispositivos, políticas, treinamento de conscientização em segurança) e respondi a parte de TI das revisões de segurança feitas por clientes.</li><li>Estruturei o acompanhamento de solicitações e projetos de TI no Linear.</li><li>Atendi a fila de TI do dia a dia: solicitações de acesso, conta, caixa de e-mail e dispositivo em Google Workspace, Slack, Bitwarden, Zendesk, Dropbox, Coda e Linear.</li></ul>
     
   </div>
 </details>
@@ -670,7 +679,7 @@
   </summary>
   <div class="rbody">
     <p class="loc">Boulder, Colorado, EUA</p>
-    <ul class="hl"><li>Operei o suporte de linha de frente e o ciclo de vida completo de identidade para 100+ usuários em 30+ sistemas.</li><li>Administrei Okta SSO, Google Workspace, Jira Service Management e a frota de dispositivos em Jamf e SentinelOne. Integrei o Okta à plataforma de RH e ao gerenciador de senhas da empresa, encerrando o provisionamento manual de contas.</li><li>Defini o modelo de service desk e o automatizei no Jira: metas de resposta e resolução por tipo de chamado, caminhos de escalação, criação de tickets pelo Slack e fluxos de onboarding/offboarding que registram prova de desativação de conta para auditoria.</li><li>Apoiei a primeira certificação SOC 2 Type 2 da empresa.</li><li>Dono da segurança de repositórios e da governança de IAM do Google Cloud em toda a organização: apliquei bloqueio de merge para alertas de segurança abertos em 16 repositórios em dois dias; migrei 32 concessões individuais de acesso para um modelo baseado em grupos.</li><li>Substituí o relatório manual de fechamento de mês do Financeiro por uma integração com a API do Stripe, que também revelou 1.496 registros que o processo manual vinha omitindo.</li></ul>
+    <ul class="hl"><li>Operei o suporte de primeira linha e o ciclo de vida de identidade completo de 100+ usuários em 30+ sistemas.</li><li>Acabei com o provisionamento manual de contas integrando o Okta à plataforma de RH e ao gerenciador de senhas; administrei Okta SSO, Google Workspace, Jira Service Management e a frota de dispositivos no Jamf e SentinelOne.</li><li>Defini o modelo de service desk e o automatizei no Jira: metas de resposta e resolução por tipo de solicitação, caminhos de escalação, tickets abertos pelo Slack e fluxos de onboarding e offboarding que registram prova de desativação de conta para auditoria.</li><li>Apoiei a primeira certificação SOC 2 Tipo 2 da empresa.</li><li>Fui dono da segurança dos repositórios e da governança de IAM no Google Cloud: apliquei regras de bloqueio de merge para alertas de segurança não resolvidos em 16 repositórios em dois dias, e migrei 32 concessões individuais de acesso para um modelo por grupos.</li><li>Substituí o relatório manual de fechamento mensal do Financeiro por uma integração com o Stripe, que também revelou 1.496 registros que o processo manual vinha deixando de fora.</li></ul>
     
   </div>
 </details>
@@ -687,7 +696,7 @@
   </summary>
   <div class="rbody">
     <p class="loc">Vitória, Espírito Santo, Brasil</p>
-    <ul class="hl"><li>Análise de requisitos e suporte N3 a incidentes escalados.</li><li>Análise de funções e rotinas de banco Oracle em PL/SQL.</li><li>Melhoria de processos de suporte; fluxos ágeis mantidos no Azure DevOps.</li></ul>
+    <ul class="hl"><li>Suporte N3 a incidentes escalados em um ERP em Oracle Forms, além de análise de requisitos.</li><li>Análise de funções e rotinas de banco Oracle em PL/SQL.</li><li>Melhorei processos de suporte; mantive fluxos ágeis no Azure DevOps.</li></ul>
     
   </div>
 </details>
@@ -704,7 +713,7 @@
   </summary>
   <div class="rbody">
     <p class="loc">Nova York, EUA</p>
-    <ul class="hl"><li>Dono do ciclo de vida de usuários, controle de acesso, automações e documentação de processos, aproveitando o ferramental existente em vez de adicionar plataformas.</li><li>Trabalhei com Segurança, RH e Infraestrutura para reforçar protocolos de segurança e destravar questões operacionais críticas.</li><li>Otimizei Okta, Jira, Google Workspace, Slack e Rippling; construí integrações de API em JavaScript, Bash e Python.</li></ul>
+    <ul class="hl"><li>Fui responsável pelo ciclo de vida de usuários, controle de acesso, automação e documentação de processos, tudo sobre o ferramental existente, sem adicionar plataformas.</li><li>Trabalhei com Segurança, RH e Infraestrutura para endurecer os protocolos de segurança e destravar problemas operacionais críticos.</li><li>Otimizei Okta, Jira, Google Workspace, Slack e Rippling; construí integrações de API em JavaScript, Bash e Python.</li></ul>
     
   </div>
 </details>
@@ -721,7 +730,7 @@
   </summary>
   <div class="rbody">
     <p class="loc">Vitória, Espírito Santo, Brasil</p>
-    <ul class="hl"><li>Suporte técnico bilíngue (português/inglês) para usuários em todos os fusos dos EUA.</li><li>Gerenciei solicitações de usuários, inventário de ativos, onboarding/offboarding e melhorias nos processos internos de TI.</li><li>Construí automações de TI que reduziram tempos de resposta.</li><li>Liderei melhorias em controle de inventário, relação com fornecedores e implantação de políticas de segurança.</li></ul>
+    <ul class="hl"><li>Suporte técnico bilíngue (português/inglês) a usuários em todos os fusos dos EUA.</li><li>Atendi solicitações de usuários, conduzi a gestão de ativos e o onboarding/offboarding e melhorei os processos internos de TI.</li><li>Construí automações de TI que reduziram tempos de resposta.</li><li>Liderei melhorias em controle de inventário, relação com fornecedores e implantação de políticas de segurança.</li></ul>
     
   </div>
 </details>
@@ -743,7 +752,7 @@
   </summary>
   <div class="rbody">
     <p class="loc">Vila Velha, Espírito Santo, Brasil</p>
-    <ul class="hl"><li>Conduzi a resposta a incidentes e transformei solicitações em casos de uso para o time de desenvolvimento.</li><li>Administrei bancos de dados PostgreSQL.</li><li>Liderei o time de suporte e treinei novos funcionários e estagiários.</li></ul>
+    <ul class="hl"><li>Liderei o time de suporte e treinei novos funcionários e estagiários; conduzi a resposta a incidentes, transformei solicitações em casos de uso para o time de desenvolvimento e administrei os bancos de dados PostgreSQL.</li></ul>
     
   </div>
 </details>
@@ -768,7 +777,7 @@
   </summary>
   <div class="rbody">
     <p class="loc">Vitória, Espírito Santo, Brasil</p>
-    <ul class="hl"><li>Analista de redes bilíngue para a VALE S/A, apoiando operações em 27 países.</li><li>Redes Mesh, LTE e rádio, BGP, MPLS, DMVPN, Cisco, CA Spectrum, BMC Remedy.</li></ul>
+    <ul class="hl"><li>Analista de redes bilíngue para a VALE S/A, apoiando operações em 27 países em redes mesh, LTE e rádio, BGP, MPLS, DMVPN e Cisco, com CA Spectrum e BMC Remedy.</li></ul>
     
   </div>
 </details>
@@ -789,7 +798,7 @@
   </summary>
   <div class="rbody">
     <p class="loc">Vitória, Espírito Santo, Brasil</p>
-    <ul class="hl"><li>Suporte a ERP, gestão de incidentes e atendimento ao cliente.</li><li>Solicitações de melhoria e análise de incidentes para o time de desenvolvimento.</li><li>Administração de MySQL e suporte a redes Windows.</li></ul>
+    <ul class="hl"><li>Suporte a ERP, gestão de incidentes e atendimento ao cliente, com análise de incidentes e solicitações de melhoria para o time de desenvolvimento; administração de MySQL e suporte a redes Windows.</li></ul>
     
   </div>
 </details>
@@ -915,7 +924,7 @@
     </div>
     <div class="row">
       <span>&copy; 2026 Paulo Vieira Silva &middot; <a href="mailto:paulo_sng@hotmail.com">paulo_sng@hotmail.com</a> &middot; <a href="https://www.linkedin.com/in/paulo-vieira-phv/" rel="me">LinkedIn</a> &middot; <a href="https://github.com/vieiraphv2" rel="me">GitHub</a></span>
-      <span>Atualizado em <time datetime="2026-10-09">outubro 2026</time> &middot; <a href="https://github.com/vieiraphv2/vieiraphv2.github.io">código</a></span>
+      <span>Atualizado em <time datetime="2026-11-03">novembro 2026</time> &middot; <a href="https://github.com/vieiraphv2/vieiraphv2.github.io">código</a></span>
     </div>
   </div>
 </footer>

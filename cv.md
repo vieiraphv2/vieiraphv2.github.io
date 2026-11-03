@@ -37,6 +37,12 @@ Both Kubernetes clusters at Smarter Sorting, July to October 2026. Measure first
 - 18 production machines down to 9, drained one at a time
 - Staging on preemptible Spot capacity plus AMD: ~$83k/year
 
+### Search Platform
+A self-managed Elasticsearch cluster on GKE, built to replace the company's managed Elastic Cloud contract (about $240k/year) at a projected $20k/year. Terraform builds it, Okta signs users in, Cloud Armor fronts it, and daily and hourly snapshots and alerting protect it, in its own GCP project. It holds 1.3 TB replicated from the four live Elastic Cloud deployments. Validated against the paid service and accepted by the data owners; no production application has switched yet.
+- 1,055 real queries replayed against both clusters: keyword results identical, and the top vector hit matched in 90 of 100 vector queries; from a user's laptop, 134 ms end to end against 270 ms on the paid service
+- Compressed the vectors of one search index: disk from 70.9 GB to 22.2 GB, vector memory from 17.3 GB to 0.6 GB and median query time from 3.9 s to 88 ms, still finding 98% or more of the correct matches
+- Moved the cluster to another region and deleted the old one through Terraform, every plan changing exactly the number of resources approved beforehand
+
 ### Smarter Desk — https://support.smartersorting.com/
 The support platform that replaced Salesforce Cases and support.smartersorting.com: scoped, built and live in 13 days, eight days before the Salesforce shutdown. Email-to-ticket intake over the Gmail API, public help center, knowledge base, assignment, RBAC, rich replies, attachments, live chat and CSAT. 65,003 tickets, 145,464 messages and 100 articles migrated from BigQuery snapshots.
 - Priorities set from live usage data: 66% of inbound mail carries attachments, 4 agents own 88% of cases
@@ -70,33 +76,34 @@ Therapist directory designed and built on WordPress with WooCommerce, Elementor 
 
 Own cloud infrastructure, the data platform and internal products at a compliance-AI SaaS company, as its only platform engineer.
 
-- Led the company-wide Snowflake to BigQuery migration as its only engineer, coordinating the cutover with every data-owning team: 1.4 TB across 33 databases and 30+ customer-facing Tableau reports (4,000+ Snowflake-specific SQL queries), zero downtime, ~35% lower compute cost. Traced years of silently wrong data to the legacy ingestion pipeline and fixed it.
-- Built the tooling that made the migration possible: a schema-aware Snowflake-to-BigQuery SQL translator, a one-click Tableau workbook converter and a schema browser covering 5,400+ tables.
-- Built the in-house support platform that replaced Salesforce Cases in 13 days: email-to-ticket intake, public help center, knowledge base, RBAC and attachments. 65,003 tickets and 145,464 messages migrated, live before the Salesforce sunset.
-- Led the Google Cloud cost program, identifying and delivering over $600k/year in savings. Diagnosed a BigQuery misconfiguration costing ~$38,000/month and validated the fix against the billing export (98.4% reduction).
-- Cut both GKE clusters from $19,574/month: right-sized dozens of services, retired 38 dead services with owner sign-off, drained 9 of 18 production nodes one at a time, moved staging to Spot capacity on AMD and closed with a one-year committed-use agreement, all without downtime or incidents. Production bill down two-thirds; ~$160k/year saved.
-- Replaced third-party data replication with in-house pipelines: a Python ETL on Cloud Run syncing 196 Salesforce objects daily, Stripe API ingestion into BigQuery, and Datastream change data capture across four environments.
-- Shipped a multi-tenant file-sharing portal with a public REST API (built in two days after a retailer refused SFTP, Dropbox and Drive) and a service granting read-only database access without distributing credentials.
-- Root-caused months of failed production restore tests to 5.5 TB of WAL held by two dead replication slots, completed the first successful restore (407 GB) and launched point-in-time recovery, automated restore tests and WAL alerts on every production instance.
-- Replaced the manual biweekly security log review with a Cloud Run job that analyzes Cloud Armor, firewall, database and Auth0 logs and files its own Jira tickets.
-- Resolved production data incidents for enterprise retail customers: restored a business-critical reporting dashboard within 5 hours; corrected hazardous-materials data feeding a national retailer's logistics system.
-- Wrote the company standard for programmatic AI access, replacing static API keys with Workload Identity Federation. Added automated AI review of failed CI builds.
+- Moved the company's data warehouse from Snowflake to BigQuery with zero downtime and ~35% lower compute cost, as the only engineer on the project: 1.4 TB across 33 databases and 30+ customer-facing Tableau reports (4,000+ Snowflake-specific queries migrated), with the cutover coordinated with every data-owning team. Found and fixed years of silently wrong data in the legacy ingestion pipeline along the way.
+- Converted a customer executive Tableau dashboard in about 15 minutes with the migration tooling I built: a schema-aware SQL translator, a one-click workbook converter and a schema browser over 5,400 tables.
+- Replaced Salesforce Cases with an in-house support platform built in 13 days and live eight days before the Salesforce shutdown: email-to-ticket intake, public help center, knowledge base, role-based access and attachments, with 65,003 tickets and 145,464 messages migrated.
+- Identified and delivered over $600k/year in Google Cloud savings across BigQuery, GKE, Cloud SQL and vendor contracts, including a BigQuery misconfiguration costing ~$38,000/month, fixed and verified against the billing export (98.4% reduction).
+- Cut both GKE clusters from $19,574/month to save ~$160k/year, the production bill down two-thirds, with no downtime or incidents: right-sized dozens of services, retired 38 dead ones with owner sign-off, halved the production node count (18 to 9) one node at a time, moved staging to Spot capacity and closed with a one-year committed-use agreement.
+- Designed, built and validated a self-managed Elasticsearch platform on GKE to replace a $240k/year managed contract at a projected $20k/year: regional cluster with infrastructure as code, SSO, snapshots and alerting, replicated from the four live Elastic Cloud deployments (1.3 TB). Accepted by the data owners after 1,055 replayed queries matched the paid service on keyword search; vector quantization made one embedding index 40x faster on a third of the disk. Production cutover still ahead.
+- Replaced third-party data replication with in-house pipelines: a Python ETL on Cloud Run syncing 196 Salesforce objects daily, Stripe ingestion into BigQuery, and Datastream change data capture from four database environments.
+- Built a multi-tenant file portal with a public API in two days after a national retailer refused SFTP, Dropbox and Drive (10,000 API calls in a single client run), and a read-only database access service that grants access without distributing credentials.
+- Fixed months of failing production restore tests: traced them to 5.5 TB of write-ahead logs held by two dead replication slots, completed the first successful restore (407 GB) and put point-in-time recovery, automated restore tests and WAL alerts on every production instance.
+- Automated the biweekly security log review with a Cloud Run job that reads Cloud Armor, firewall, database and Auth0 logs and files its own Jira tickets.
+- Resolved production data incidents for enterprise retail customers, including a business-critical reporting dashboard restored within 5 hours and hazardous-materials data corrected in a national retailer's logistics feed.
+- Wrote the company standard for programmatic AI access, replacing static API keys with Workload Identity Federation, and added automated AI review of failed CI builds.
 
-Keywords: Google Cloud Platform, BigQuery, Snowflake, SQL, GKE, Kubernetes, Terraform, Cloud Run, Cloud SQL, Datastream, Python, TypeScript, Tableau, FinOps, Workload Identity Federation, CI/CD, Disaster recovery, Incident response, AI agents
+Keywords: Google Cloud Platform, BigQuery, Snowflake, SQL, GKE, Kubernetes, Elasticsearch, Terraform, Cloud Run, Cloud SQL, Datastream, Python, TypeScript, Tableau, FinOps, Workload Identity Federation, CI/CD, Disaster recovery, Incident response, AI agents
 
 ### IT Consultant · Pareto AI
 *Apr 2026 – Oct 2026 · Contract · Remote*
 
 IT lead for an AI data company with a corporate team and an external expert workforce of about 1,000 accounts across seven Google Workspace tenants. Reported to the Head of People and owned IT end to end: security, identity, devices, vendors and support.
 
-- Advised leadership and the People, Legal, Procurement, Support, Trust and Safety and DevOps teams on IT decisions, writing the options and cost analyses behind endpoint management, laptop sourcing, MDM and SSO; advised on SOC 2 scope, AI coding tool licensing, employee monitoring, data sharing controls and the access standard for hybrid workers.
-- Started with a baseline security audit of Google Workspace and Slack and turned the findings into the IT roadmap: 76 tracked actions and a 32-point due-diligence readiness checklist.
-- Implemented 2-step verification on the corporate Google Workspace tenant and six external tenants, 1,000+ accounts in three phased waves, coordinating the rollout across teams; built a Slack tool, a support runbook and an identity-verified account recovery process so locked-out external users could be unblocked securely.
-- Automated onboarding and offboarding with a Slack app connecting Ashby, Rippling, Linear and other platforms: hiring and termination events open linked IT tickets and notify the right channels without manual entry.
-- Took over Apple Business Manager administration and reconnected it to Rippling MDM, so new company Macs enroll in device management automatically.
-- Wrote the security improvement plan covering SOC 2, device management, policies and security awareness training, and provided the IT input for customer security reviews.
+- Gave leadership and six teams (People, Legal, Procurement, Support, Trust and Safety, DevOps) the options and cost analyses behind endpoint management, laptop sourcing, MDM and SSO, and advised on SOC 2 scope, AI coding tool licensing, employee monitoring, data sharing controls and the access standard for hybrid workers.
+- Turned a baseline security audit of Google Workspace and Slack into the company's IT roadmap: 76 tracked actions and a 32-point due-diligence readiness checklist.
+- Brought 1,000+ accounts across seven Google Workspace tenants under 2-step verification in three phased waves coordinated across teams, with a Slack tool, a support runbook and an identity-verified recovery process that unblocked locked-out external users securely.
+- Automated onboarding and offboarding with a Slack app connected to Ashby, Rippling and Linear: hiring and termination events open linked IT tickets and notify the right channels without manual entry.
+- Put new company Macs under device management automatically by taking over Apple Business Manager and reconnecting it to the MDM.
+- Wrote the security improvement plan (SOC 2, device management, policies, security awareness training) and answered the IT side of customer security reviews.
 - Set up IT request and project tracking in Linear.
-- Handled the day-to-day queue: around 90 access, account, mailbox and device requests across Google Workspace, Slack, Bitwarden, Zendesk, Dropbox, Coda, Linear and other platforms.
+- Ran the day-to-day IT queue: access, account, mailbox and device requests across Google Workspace, Slack, Bitwarden, Zendesk, Dropbox, Coda and Linear.
 
 Keywords: Google Workspace, GAM, Google Apps Script, Slack, Rippling, Apple Business Manager, MDM, Ashby, Linear, Zendesk, Bitwarden, SOC 2, MFA, IAM, Identity lifecycle, Automation, AI agents, Vendor management
 
@@ -106,11 +113,11 @@ Keywords: Google Workspace, GAM, Google Apps Script, Slack, Rippling, Apple Busi
 Built and ran the company's IT function as its only IT engineer.
 
 - Ran frontline support and the full identity lifecycle for 100+ users across 30+ systems.
-- Administered Okta SSO, Google Workspace, Jira Service Management and the device fleet on Jamf and SentinelOne. Integrated Okta with the HR platform and the company password manager, ending manual account provisioning.
-- Defined the service-desk model and automated it in Jira: response and resolution targets by request type, escalation paths, ticket creation from Slack, and onboarding/offboarding workflows that record proof of account deactivation for audit.
+- Ended manual account provisioning by integrating Okta with the HR platform and the password manager; administered Okta SSO, Google Workspace, Jira Service Management and the device fleet on Jamf and SentinelOne.
+- Defined the service-desk model and automated it in Jira: response and resolution targets by request type, escalation paths, tickets opened from Slack, and onboarding and offboarding workflows that record proof of account deactivation for audit.
 - Supported the company's first SOC 2 Type 2 certification.
-- Owned repository security and organization-wide Google Cloud IAM governance: enforced merge-blocking rules for unresolved security alerts across 16 repositories in two days; migrated 32 individual access grants to a group-based model.
-- Replaced Finance's manual month-end reporting with a Stripe API integration, which also surfaced 1,496 records the manual process had been omitting.
+- Owned repository security and Google Cloud IAM governance: enforced merge-blocking rules for unresolved security alerts across 16 repositories in two days, and moved 32 individual access grants to a group-based model.
+- Replaced Finance's manual month-end reporting with a Stripe integration that also surfaced 1,496 records the manual process had been missing.
 
 Keywords: Okta, Google Workspace, Jamf, SentinelOne, Jira Service Management, SOC 2, IAM, Stripe API, Identity lifecycle, Retool, Proofpoint, GitHub, Automation
 
@@ -119,7 +126,7 @@ Keywords: Okta, Google Workspace, Jamf, SentinelOne, Jira Service Management, SO
 
 Support for an ERP built on Oracle Forms.
 
-- Requirements analysis and L3 support for escalated incidents.
+- L3 support for escalated incidents on an Oracle Forms ERP, plus requirements analysis.
 - Analysis of Oracle database functions and routines in PL/SQL.
 - Improved support processes; maintained agile workflows in Azure DevOps.
 
@@ -130,7 +137,7 @@ Keywords: PL/SQL, Oracle Forms, Azure DevOps, L3 support, Requirements analysis,
 
 Led the IT team.
 
-- Owned user lifecycle, access control, automation and process documentation, building on the existing tooling rather than adding new platforms.
+- Owned user lifecycle, access control, automation and process documentation, all on the existing tooling rather than adding new platforms.
 - Worked with Security, HR and Infrastructure to tighten security protocols and unblock critical operational issues.
 - Optimized Okta, Jira, Google Workspace, Slack and Rippling; built API integrations in JavaScript, Bash and Python.
 
@@ -140,7 +147,7 @@ Keywords: Okta, Rippling, Google Workspace, JavaScript, Bash, Python, Team leade
 *Apr 2022 – Jan 2024 · Full-time · Vitória, Espírito Santo, Brazil · On-site*
 
 - Bilingual (Portuguese/English) technical support for users across every US time zone.
-- Managed user requests, asset management, onboarding/offboarding and internal IT process improvements.
+- Ran user requests, asset management and onboarding/offboarding, and improved the internal IT processes.
 - Built automation for IT tasks that cut response times.
 - Led improvements in inventory control, vendor relations and security policy rollout.
 
@@ -149,26 +156,21 @@ Keywords: IT Service Management, Asset management, User lifecycle, Onboarding, O
 ### Software Support Analyst · Quality WebPosto
 *Mar 2021 – Apr 2022 · Full-time · Vila Velha, Espírito Santo, Brazil · Hybrid*
 
-- Ran incident response and turned requests into use cases for the development team.
-- Administered PostgreSQL databases.
-- Led the support team and trained new hires and interns.
+- Led the support team and trained new hires and interns; ran incident response, turned requests into use cases for the development team and administered the PostgreSQL databases.
 
 Keywords: PostgreSQL, Incident management, Team leadership, ERP, Training & mentoring
 
 ### NOC Analyst · Algar Tech
 *Apr 2020 – Feb 2021 · Full-time · Vitória, Espírito Santo, Brazil · Remote*
 
-- Bilingual network analyst for VALE S/A, supporting operations in 27 countries.
-- Mesh, LTE and radio networks, BGP, MPLS, DMVPN, Cisco, CA Spectrum, BMC Remedy.
+- Bilingual network analyst for VALE S/A, supporting operations in 27 countries across mesh, LTE and radio networks, BGP, MPLS, DMVPN and Cisco, with CA Spectrum and BMC Remedy.
 
 Keywords: Networks, BGP, MPLS, DMVPN, Cisco, CA Spectrum, BMC Remedy, NOC, ITIL, Incident management
 
 ### Software Support Analyst · Prosystem
 *Oct 2017 – Apr 2020 · Full-time · Vitória, Espírito Santo, Brazil · Hybrid*
 
-- ERP support, incident management and customer service.
-- Improvement requests and incident analysis for the development team.
-- MySQL administration and Windows network support.
+- ERP support, incident management and customer service, with incident analysis and improvement requests for the development team; MySQL administration and Windows network support.
 
 Keywords: MySQL, ERP, ITIL, Customer support, Windows networks, Incident management
 
@@ -236,4 +238,4 @@ Keywords: Field support, CCTV, Hardware maintenance
 - Spanish: Basic
 
 ---
-Canonical: https://vieiraphv2.github.io/ · JSON Resume: https://vieiraphv2.github.io/resume.json · Updated 2026-10-09
+Canonical: https://vieiraphv2.github.io/ · JSON Resume: https://vieiraphv2.github.io/resume.json · Updated 2026-11-03

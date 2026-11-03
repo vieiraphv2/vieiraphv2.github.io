@@ -25,4 +25,4 @@ Current roles: DevOps Engineer at Smarter Sorting (since Jul 2025).
 
 ## Optional
 
-- Updated 2026-10-09. Numbers are from billing exports, invoices and ticket counts as of that date.
+- Updated 2026-11-03. Numbers are from billing exports, invoices and ticket counts as of that date.
