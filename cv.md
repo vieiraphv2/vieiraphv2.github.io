@@ -206,7 +206,7 @@ Keywords: Field support, CCTV, Hardware maintenance
 ## What colleagues say (LinkedIn recommendations, verbatim)
 
 > "Due to his strong commitment, sense of responsibility, great rapport with colleagues and ability to work well under pressure, Paulo demands little to no management. It was a pleasure working with Paulo, and I would definitely work with him again."
-> — Gustavo Valente, CISSP, CISA, CFE, PMP, Global Information Security & Risk Leader, CISO (Managed Paulo directly, 2025-01)
+> — Gustavo Valente, CISSP, CISA, CFE, PMP, Senior Director, IT Operations, Risk and Information Security at Smarter Sorting (Managed Paulo directly, 2025-01)
 
 > "His proactive approach to problem-solving set him apart. He consistently identified and addressed potential issues before they impacted operations. His easy-going nature and clear communication style made him effective with both technical and non-technical stakeholders."
 > — Nicole Adams Kraus, Founder at BlueHouse, ex Chief Talent Officer (Senior to Paulo at SmarterX, 2025-01)
